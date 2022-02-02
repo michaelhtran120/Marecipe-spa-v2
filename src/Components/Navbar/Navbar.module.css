@@ -1,0 +1,68 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  padding: 0px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.navbar-container .navbar-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-container .navbar-left ul {
+  display: inline;
+}
+
+.navbar-container .navbar-left ul li {
+  display: inline-block;
+}
+
+.navbar-container .navbar-left ul li a {
+  text-decoration: none;
+}
+
+.navbar-container .navbar-left ul:not(:first-child) > li {
+  margin: 0 5px;
+}
+
+.navbar-container .navbar-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-container .navbar-right ul {
+  display: inline;
+  list-style-type: none;
+}
+
+.navbar-container .navbar-right ul a {
+  text-decoration: none;
+  padding: 12px 18px;
+  border: 1px solid green;
+  border-radius: 12px;
+}
