@@ -1,7 +1,16 @@
 import React from "react";
 
 function Home() {
-  return <div>Home</div>;
+  // const handleToggle = () => {
+  //   setTimeout(() => {
+  //     console.log("Hello");
+  //   }, 1000);
+  // };
+  return (
+    <div>
+      <br />
+    </div>
+  );
 }
 
 export default Home;

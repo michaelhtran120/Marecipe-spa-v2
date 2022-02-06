@@ -5,9 +5,10 @@ import { Routes, Route } from "react-router-dom";
 // Style imports
 import "./App.css";
 
+// Component imports
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
-import LogIn from "./Pages/LogIn/LogIn";
+import LogIn from "./Pages/SignIn/SignIn";
 import Recipe from "./Pages/Recipes/Recipe";
 import Shopping from "./Pages/Shopping/Shopping";
 
@@ -21,7 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="recipe" element={<Recipe />} />
         <Route path="shopping" element={<Shopping />} />
-        <Route path="login" element={<LogIn />} />
+        <Route path="signin" element={<LogIn />} />
       </Routes>
     </div>
   );

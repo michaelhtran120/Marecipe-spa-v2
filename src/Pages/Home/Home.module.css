@@ -1,3 +1,6 @@
 .home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   border-top: 1px solid orange;
 }

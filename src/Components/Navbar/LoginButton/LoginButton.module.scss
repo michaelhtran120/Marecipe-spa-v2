@@ -1,0 +1,49 @@
+.signin-li {
+  .signin-button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 49px;
+    font-size: 18px;
+    transition: all 0.4s;
+    cursor: pointer;
+    color: var(--primary-color);
+
+    &:before {
+      content: none;
+    }
+
+    &:hover span {
+      padding-right: 30px;
+    }
+    &:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.4s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:after {
+        content: "";
+        mask: url("../../../assets/images/login.svg");
+        mask-size: cover;
+        position: absolute;
+        opacity: 0;
+        top: 1.5px;
+        bottom: 0;
+        width: 20px;
+        right: -30px;
+        transition: 0.5s;
+        background-color: var(--primary-color);
+      }
+    }
+  }
+}

@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 // Style imports
 import styles from "./Navbar.module.css";
 
+// Asset imports
+import { ReactComponent as MainHeaderLogo } from "../../assets/images/logo.svg";
+import LoginButton from "./LoginButton/LoginButton";
+import MenuButton from "./MenuButton/MenuButton";
+
 type NavLinkProps = {
   path: string;
   textContent: string;
@@ -20,26 +25,22 @@ function NavLink({ path, textContent }: NavLinkProps) {
 
 function Navbar(): ReactElement | null {
   return (
-    <header className={styles["navbar-container"]}>
-      <nav className={styles["navbar-left"]}>
-        <h1>Logo Image Here</h1>
+    <header className={styles.navbar_container}>
+      <nav className={styles.navbar_left_links}>
+        <Link to="/">
+          <MainHeaderLogo className={styles.header_logo} />
+        </Link>
         <ul>
-          <NavLink path="/" textContent="Home" />
-          <li>
-            <Link to="/recipe">Recipe</Link>
-          </li>
-          <li>
-            <Link to="/shopping">Shopping</Link>
-          </li>
+          <NavLink path="/recipe" textContent="Recipe" />
+          <NavLink path="/shopping" textContent="Shopping" />
         </ul>
       </nav>
-      <nav className={styles["navbar-right"]}>
+      <nav className={styles.navbar_right_links}>
         <ul>
-          <li>
-            <Link to="/login">Log In</Link>
-          </li>
+          <LoginButton />
         </ul>
       </nav>
+      <MenuButton />
     </header>
   );
 }

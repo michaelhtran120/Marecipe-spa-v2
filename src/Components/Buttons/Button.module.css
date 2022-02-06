@@ -1,0 +1,80 @@
+.button {
+  padding: 10px 14px;
+  font-size: 18px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.45s ease-in-out;
+  transition: -webkit-transform 0.45s ease-in-out;
+  transition: transform 0.45s ease-in-out;
+  transition: transform 0.45s ease-in-out, -webkit-transform 0.45s ease-in-out;
+}
+
+.button:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.primary_outline {
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.primary_outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.secondary:hover {
+  background-color: var(--secondary-color-hover);
+}
+
+.secondary_outline {
+  background-color: white;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.secondary_outline:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.danger {
+  background-color: red;
+  color: white;
+}
+
+.danger:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.danger_outline {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+}
+
+.danger_outline:hover {
+  background-color: red;
+  color: white;
+}
