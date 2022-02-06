@@ -1,0 +1,86 @@
+.navbar_container {
+  height: 70px;
+  top: 0;
+  padding: 0px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: white;
+}
+
+@media screen and (max-width: 650px) {
+  .navbar_container {
+    display: none;
+  }
+}
+
+.navbar_container .navbar_left_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar_container .navbar_left_links .header_logo {
+  width: 175px;
+}
+
+.navbar_container .navbar_left_links ul {
+  display: inline;
+  margin: 1rem 1rem;
+}
+
+.navbar_container .navbar_left_links ul li {
+  display: inline-block;
+}
+
+.navbar_container .navbar_left_links ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: var(--nav-link-font-size);
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.navbar_container .navbar_left_links ul li a:hover {
+  color: var(--primary-color);
+}
+
+.navbar_container .navbar_left_links ul:not(:first-child) > li {
+  margin: 0 1rem;
+}
+
+.navbar_container .navbar_right_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar_container .navbar_right_links ul {
+  display: inline;
+  list-style-type: none;
+  margin: 1rem 0;
+}
+
+.navbar_container .navbar_right_links ul a {
+  text-decoration: none;
+  padding: 8px 14px;
+}

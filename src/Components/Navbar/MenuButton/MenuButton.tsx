@@ -1,20 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MenuButton.css";
 
-function MenuButton() {
-  const [isOpen, setIsOpen] = useState(false);
+type Props = {
+  isOpen: boolean;
+  handleClick: () => void;
+  handleKeyPress: any;
+};
 
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleKeyPress = (event: any): void => {
-    event.preventDefault();
-    if (event.key === "Enter") {
-      setIsOpen(!isOpen);
-    }
-  };
-
+function MenuButton({ isOpen, handleClick, handleKeyPress }: Props) {
   return (
     <div
       role="button"

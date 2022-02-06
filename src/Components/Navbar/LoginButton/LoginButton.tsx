@@ -7,11 +7,11 @@ import styles from "./LoginButton.module.css";
 
 function LoginButton() {
   return (
-    <li className={styles["signin-li"]}>
+    <div className={styles["signin-li"]}>
       <Link to="/signin" className={`${styles["signin-button-link"]} _button`}>
         <span>Sign In</span>
       </Link>
-    </li>
+    </div>
   );
 }
 

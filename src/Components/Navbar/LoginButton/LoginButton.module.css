@@ -24,6 +24,7 @@
 
 .signin-li .signin-button-link:hover span {
   padding-right: 30px;
+  color: var(--primary-color);
 }
 
 .signin-li .signin-button-link:hover span:after {

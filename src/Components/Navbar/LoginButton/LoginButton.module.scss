@@ -17,6 +17,7 @@
 
     &:hover span {
       padding-right: 30px;
+      color: var(--primary-color);
     }
     &:hover span:after {
       opacity: 1;

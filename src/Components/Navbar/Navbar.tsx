@@ -1,48 +1,14 @@
-// Library imports
-import React, { ReactElement } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
+import MobileNavBar from "./MobileNavbar/MobileNavbar";
 
-// Style imports
 import styles from "./Navbar.module.css";
 
-// Asset imports
-import { ReactComponent as MainHeaderLogo } from "../../assets/images/logo.svg";
-import LoginButton from "./LoginButton/LoginButton";
-import MenuButton from "./MenuButton/MenuButton";
-
-type NavLinkProps = {
-  path: string;
-  textContent: string;
-};
-
-function NavLink({ path, textContent }: NavLinkProps) {
+export default function Navbar() {
   return (
-    <li>
-      <Link to={path}>{textContent}</Link>
-    </li>
-  );
-}
-
-function Navbar(): ReactElement | null {
-  return (
-    <header className={styles.navbar_container}>
-      <nav className={styles.navbar_left_links}>
-        <Link to="/">
-          <MainHeaderLogo className={styles.header_logo} />
-        </Link>
-        <ul>
-          <NavLink path="/recipe" textContent="Recipe" />
-          <NavLink path="/shopping" textContent="Shopping" />
-        </ul>
-      </nav>
-      <nav className={styles.navbar_right_links}>
-        <ul>
-          <LoginButton />
-        </ul>
-      </nav>
-      <MenuButton />
+    <header className={styles.main_navbar_container}>
+      <DesktopNavbar />
+      <MobileNavBar />
     </header>
   );
 }
-
-export default Navbar;
