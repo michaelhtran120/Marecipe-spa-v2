@@ -8,7 +8,7 @@ import Button from "../../Buttons/Button";
 
 // Style import
 import styles from "./LoginForm.module.css";
-import LabelInputV2 from "../../LabelInput/LabelInputV2";
+import LabelInputV2 from "../../LabelInput/LabelInput";
 
 function LoginForm() {
   const [inputs, setInputs] = useState({
@@ -24,8 +24,8 @@ function LoginForm() {
   };
 
   const handleLogin = (event: SubmitEvent) => {
-    event.preventDefault();
-    console.log("logging in");
+    // event.preventDefault();
+    console.log("logging in", event);
   };
 
   return (
@@ -38,12 +38,14 @@ function LoginForm() {
         label="E-mail address"
         type="email"
         handleChange={handleChange}
+        required
       />
       <LabelInputV2
         inputId="login_password"
         label="Password"
         type="password"
         handleChange={handleChange}
+        required
       />
       <Button
         variant="primary"

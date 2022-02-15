@@ -4,7 +4,7 @@ This project is a passion project that is being redone. Thinking about how I fir
 
 ###### **2/15/22 Update:**
 
-Learn how to effectively utilize useRef with useLayoutEffect over using useEffect for direct DOM mutation. Also thinking about meeting WCAG guidelines as I develope this application.
+Learn how to effectively utilize useRef with useLayoutEffect over using useEffect for direct DOM mutation. Also thinking about meeting WCAG guidelines as I develop this application.
 
 Will continue to update README as I continue developing this project.
 

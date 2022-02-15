@@ -1,15 +1,22 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useLayoutEffect, useRef } from "react";
-import styles from "./LabelInputV2.module.css";
+import styles from "./LabelInput.module.css";
 
 type LabelInputProp = {
   inputId: string;
   label: string;
   type: string;
   handleChange: (event: any) => void;
+  required?: boolean;
 };
 
-function LabelInputV2({ inputId, label, type, handleChange }: LabelInputProp) {
+function LabelInputV2({
+  inputId,
+  label,
+  type,
+  handleChange,
+  required,
+}: LabelInputProp) {
   const labelInputGroupRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -46,9 +53,14 @@ function LabelInputV2({ inputId, label, type, handleChange }: LabelInputProp) {
         name={inputId}
         id={inputId}
         onChange={handleChange}
+        required={required}
       />
     </div>
   );
 }
+
+LabelInputV2.defaultProps = {
+  required: false,
+};
 
 export default LabelInputV2;
