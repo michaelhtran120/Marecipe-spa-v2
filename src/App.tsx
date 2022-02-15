@@ -8,7 +8,7 @@ import "./App.css";
 // Component imports
 
 import Home from "./Pages/Home/Home";
-import LogIn from "./Pages/SignIn/SignIn";
+import LogIn from "./Pages/LogIn/LogIn";
 import Recipe from "./Pages/Recipes/Recipe";
 import Shopping from "./Pages/Shopping/Shopping";
 import Navbar from "./Components/Navbar/Navbar";

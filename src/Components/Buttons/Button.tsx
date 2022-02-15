@@ -5,10 +5,16 @@ import styles from "./Button.module.css";
 type ButtonProps = {
   children: React.ReactNode;
   variant: string;
-  handleClick: () => void;
+  handleClick: (event?: any) => void;
+  submit?: boolean;
 };
 
-function Button({ children, variant, handleClick }: ButtonProps): JSX.Element {
+function Button({
+  children,
+  variant,
+  handleClick,
+  submit,
+}: ButtonProps): JSX.Element {
   const variantStyle = () => {
     switch (variant) {
       case "primary":
@@ -30,7 +36,7 @@ function Button({ children, variant, handleClick }: ButtonProps): JSX.Element {
 
   return (
     <button
-      type="button"
+      type={submit ? "submit" : "button"}
       className={`${styles.button} ${variantStyle()}`}
       onClick={handleClick}
     >
@@ -38,5 +44,9 @@ function Button({ children, variant, handleClick }: ButtonProps): JSX.Element {
     </button>
   );
 }
+
+Button.defaultProps = {
+  submit: false,
+};
 
 export default Button;

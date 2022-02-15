@@ -1,5 +1,4 @@
 import React from "react";
-import LoginForm from "../../Components/Forms/LoginForm/LoginForm";
 
 function Home() {
   // const handleToggle = () => {
@@ -10,7 +9,7 @@ function Home() {
 
   return (
     <div style={{ height: "120px", width: "500px", padding: "20px" }}>
-      <LoginForm />
+      Home Page
     </div>
   );
 }

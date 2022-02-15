@@ -1,0 +1,43 @@
+.login_form {
+  width: 75%;
+  max-width: 500px;
+  margin: auto;
+  padding: 25px 25px 70px 25px;
+  background-color: var(--white);
+  border: 3px solid var(--primary-color);
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.login_form h1 {
+  text-align: center;
+  color: var(--primary-color);
+  padding: 25px 10px;
+}
+
+.login_form input:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.login_form button {
+  display: block;
+  min-width: 200px;
+  margin: 10px auto;
+}
+
+.login_form p {
+  text-align: center;
+}
+
+@media screen and (max-width: 698px) {
+  .login_form {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .login_form {
+    width: 100%;
+    border: none;
+  }
+}

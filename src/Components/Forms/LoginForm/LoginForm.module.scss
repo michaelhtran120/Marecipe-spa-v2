@@ -1,0 +1,33 @@
+.login_form {
+  width: 75%;
+  max-width: 500px;
+  margin: auto;
+  padding: 25px 25px 70px 25px;
+  background-color: var(--white);
+  border: 3px solid var(--primary-color);
+  border-radius: 5px;
+  z-index: 10;
+  h1 {
+    text-align: center;
+    color: var(--primary-color);
+    padding: 25px 10px;
+  }
+  input:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  button {
+    display: block;
+    min-width: 200px;
+    margin: 10px auto;
+  }
+  p {
+    text-align: center;
+  }
+  @media screen and (max-width: 698px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    border: none;
+  }
+}
