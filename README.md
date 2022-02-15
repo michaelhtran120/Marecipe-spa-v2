@@ -1,8 +1,13 @@
 # MaRecipe v2
 
-This project is a passion project that is being redone. Thinking about how I first approach developing this application, I determined that I would prefer to minimize the amount of code within JSX. The architecture could have been better optimize and after learnig back-end with Express and MongoDB, I have a better idea of how I would like to build my front-end. 
+This project is a passion project that is being redone. Thinking about how I first approach developing this application, I determined that I would prefer to minimize the amount of code within JSX. The architecture could have been better optimize and after learnig back-end with Express and MongoDB, I have a better idea of how I would like to build my front-end. This will also give me more practice implementing Typescript and other React libraries.
+
+**2/15/22 Update:**
+Learn how to effectively utilize useRef with useLayoutEffect over using useEffect for direct DOM mutation. Also thinking about meeting WCAG guidelines as I develope this application.
 
 Will continue to update README as I continue developing this project.
+
+<hr/>
 
 # Getting Started with Create React App
 
