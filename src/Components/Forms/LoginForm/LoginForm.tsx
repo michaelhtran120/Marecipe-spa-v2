@@ -52,6 +52,7 @@ function LoginForm() {
       >
         Log In
       </Button>
+
       <br />
       <p>
         Don&apos;t have an account? Click here to{" "}
@@ -59,10 +60,9 @@ function LoginForm() {
       </p>
       <br />
       <p>
-        <NavLink to="/#">Forgot Password</NavLink>?
+        <NavLink to="/forgot-password">Forgot Password</NavLink>?
       </p>
     </form>
   );
 }
-// !NEED to clean up
 export default LoginForm;

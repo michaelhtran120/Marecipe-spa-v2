@@ -12,6 +12,8 @@
   --secondary-color-hover: rgba(122, 122, 122, 0.75);
   --white: #fff;
   --black: #1a1a1a;
+  --red: rgb(219, 84, 97);
+  --red-button-hover: rgba(219, 84, 97, 0.65);
 
   /* Text sizing */
   --nav-link-font-size: 1.1rem;

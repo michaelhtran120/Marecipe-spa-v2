@@ -27,8 +27,8 @@ function Button({
         return styles.primary_outline;
       case "secondary-outline":
         return styles.secondary_outline;
-      case "danger-outline":
-        return styles.danger_outline;
+      // case "danger-outline":
+      //   return styles.danger_outline;
       default:
         return "";
     }
