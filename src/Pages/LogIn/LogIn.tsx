@@ -2,7 +2,7 @@
 import React, { ReactElement } from "react";
 
 // Component import
-import LoginForm from "../../Components/Forms/LoginForm/LoginForm";
+import LoginForm from "../../Components/Forms/LoginForm/LabelInputV2";
 
 // Styles Import
 import styles from "./LogInPage.module.css";
