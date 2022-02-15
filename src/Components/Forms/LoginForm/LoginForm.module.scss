@@ -3,17 +3,14 @@
   max-width: 500px;
   margin: auto;
   padding: 25px 25px 70px 25px;
-  background-color: var(--white);
-  border: 3px solid var(--primary-color);
+  background-color: var(--black);
+  // border: 3px solid var(--primary-color);
   border-radius: 5px;
   z-index: 10;
   h1 {
     text-align: center;
     color: var(--primary-color);
     padding: 25px 10px;
-  }
-  input:not(:last-child) {
-    margin-bottom: 20px;
   }
   button {
     display: block;
@@ -22,6 +19,10 @@
   }
   p {
     text-align: center;
+    color: var(--white);
+  }
+  a {
+    color: var(--primary-color);
   }
   @media screen and (max-width: 698px) {
     width: 90%;

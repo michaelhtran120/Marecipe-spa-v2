@@ -1,5 +1,5 @@
 import React from "react";
-import LoginFormTwo from "../../Components/Forms/LoginForm/LabelInputV2";
+import LabelInputV2 from "../../Components/LabelInput/LabelInputV2";
 
 function Home() {
   // const handleToggle = () => {
@@ -12,7 +12,22 @@ function Home() {
     <div style={{ height: "120px", width: "500px", padding: "20px" }}>
       Home Page
       <br />
-      <LoginFormTwo />
+      <LabelInputV2
+        inputId="login-email"
+        label="E-mail address"
+        type="email"
+        handleChange={(event: any) => {
+          console.log(event.target.value);
+        }}
+      />
+      <LabelInputV2
+        inputId="login-password"
+        label="Password"
+        type="password"
+        handleChange={(event: any) => {
+          console.log(event.target.value);
+        }}
+      />
     </div>
   );
 }

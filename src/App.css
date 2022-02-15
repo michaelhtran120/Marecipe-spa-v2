@@ -8,9 +8,10 @@
   /* Color Variables */
   --primary-color: #79b473;
   --primary-color-hover: rgb(122, 180, 115, 0.7);
-  --secondary-color: #4c5454;
+  --secondary-color: #a1aaaa;
   --secondary-color-hover: rgba(122, 122, 122, 0.75);
   --white: #fff;
+  --black: #1a1a1a;
 
   /* Text sizing */
   --nav-link-font-size: 1.1rem;
@@ -19,7 +20,7 @@
 body {
   /* top padding for fixed/sticky navbar */
   padding-top: 70px;
-  background-color: #ffff;
+  background-color: var(--black);
 }
 
 /* Button */

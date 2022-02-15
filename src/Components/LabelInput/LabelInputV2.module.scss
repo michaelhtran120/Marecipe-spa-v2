@@ -6,9 +6,8 @@
   bottom: 10px;
   left: 15px;
   font-weight: 300;
-  color: #8f8f8f;
+  color: var(--white);
   z-index: -1;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
@@ -17,8 +16,7 @@
   color: var(--primary-color);
   font-size: 18px;
   left: 0;
-  -webkit-transform: translateY(-32px);
-          transform: translateY(-32px);
+  transform: translateY(-36px);
 }
 
 .input:focus {
@@ -30,49 +28,38 @@
   font-size: 18px;
   font-weight: 300;
   border-radius: 2px;
-  padding: 4px 12px 10px 2px;
+  padding: 8px 4px 10px 10px;
   border: 2px solid var(--secondary-color);
   width: 80%;
+  color: white;
   background: rgba(0, 0, 0, 0);
   overflow-x: hidden;
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   max-width: 960px;
   padding: 60px 30px;
   margin: auto;
 }
 
 .inputGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: wrap row;
-          flex-flow: wrap row;
+  flex-flow: wrap row;
   position: relative;
-  margin: 20px 0px;
+  margin: 30px 0px 10px 0px;
 }
 
 .inputGroup label,
 .inputGroup input {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  flex: 0 0 100%;
   max-width: 100%;
 }
 
 .border {
   border-bottom: 1px solid red;
   width: 10%;
-  -webkit-transition: width 0.2s ease;
   transition: width 0.2s ease;
 }
 
