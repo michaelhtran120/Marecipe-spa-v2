@@ -1,25 +1,34 @@
 import React from "react";
 
 // Style import
-import styles from "./FormInput.module.css";
+import styles from "./TextNumInput.module.css";
 
 type InputProps = {
   placeholder: string;
   type: string;
   inputId: string;
-  handleChange: () => void;
+  handleChange: (event: any) => void;
+  value: string | undefined;
 };
 
-function FormInput({ placeholder, type, inputId, handleChange }: InputProps) {
+function TextNumInput({
+  placeholder,
+  type,
+  inputId,
+  handleChange,
+  value,
+}: InputProps) {
   return (
     <input
       id={inputId}
+      name={inputId}
       className={styles.form_input}
       type={type}
       placeholder={placeholder}
       onChange={handleChange}
+      value={value}
     />
   );
 }
 
-export default FormInput;
+export default TextNumInput;

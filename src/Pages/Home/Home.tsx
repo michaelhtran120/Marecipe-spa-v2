@@ -1,5 +1,5 @@
-import React from "react";
-import FormInput from "../../Components/Forms/FormInput/FormInput";
+import React, { useState } from "react";
+import TextNumInput from "../../Components/Forms/TextNumInput/TextNumInput";
 
 function Home() {
   // const handleToggle = () => {
@@ -7,15 +7,19 @@ function Home() {
   //     console.log("Hello");
   //   }, 1000);
   // };
+  const [input, setInput] = useState("");
+  const handleChange = (event: any) => {
+    setInput(event.target.value);
+  };
+
   return (
     <div style={{ width: "500px", padding: "20px" }}>
-      <FormInput
+      <TextNumInput
         inputId="test"
         placeholder="test"
         type="text"
-        handleChange={() => {
-          console.log("changing");
-        }}
+        handleChange={handleChange}
+        value={input}
       />
     </div>
   );
