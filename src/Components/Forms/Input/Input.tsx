@@ -1,7 +1,7 @@
 import React from "react";
 
 // Style import
-import styles from "./TextNumInput.module.css";
+import styles from "./Input.module.css";
 
 type InputProps = {
   placeholder: string;
@@ -11,7 +11,7 @@ type InputProps = {
   value: string | undefined;
 };
 
-function TextNumInput({
+function Input({
   placeholder,
   type,
   inputId,
@@ -31,4 +31,4 @@ function TextNumInput({
   );
 }
 
-export default TextNumInput;
+export default Input;

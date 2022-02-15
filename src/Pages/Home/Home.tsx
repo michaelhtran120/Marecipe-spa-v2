@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import TextNumInput from "../../Components/Forms/TextNumInput/TextNumInput";
+import TextNumInput from "../../Components/Forms/Input/Input";
+import Label from "../../Components/Forms/Label/Label";
 
 function Home() {
   // const handleToggle = () => {
@@ -13,7 +14,8 @@ function Home() {
   };
 
   return (
-    <div style={{ width: "500px", padding: "20px" }}>
+    <div style={{ height: "120px", width: "500px", padding: "20px" }}>
+      <Label title="test label" inputId="test" />
       <TextNumInput
         inputId="test"
         placeholder="test"
