@@ -2,20 +2,23 @@
   width: 75%;
   max-width: 500px;
   margin: auto;
-  padding: 25px 25px 70px 25px;
+  padding: 25px 30px 70px 30px;
   background-color: var(--black);
-  // border: 3px solid var(--primary-color);
-  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
   z-index: 10;
   h1 {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--white);
     padding: 25px 10px;
+    span {
+      color: var(--primary-color);
+    }
   }
   button {
     display: block;
     min-width: 200px;
-    margin: 10px auto;
+    margin: 30px auto;
   }
   p {
     text-align: center;

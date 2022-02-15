@@ -2,22 +2,27 @@
   width: 75%;
   max-width: 500px;
   margin: auto;
-  padding: 25px 25px 70px 25px;
+  padding: 25px 30px 70px 30px;
   background-color: var(--black);
-  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
   z-index: 10;
 }
 
 .login_form h1 {
   text-align: center;
-  color: var(--primary-color);
+  color: var(--white);
   padding: 25px 10px;
+}
+
+.login_form h1 span {
+  color: var(--primary-color);
 }
 
 .login_form button {
   display: block;
   min-width: 200px;
-  margin: 10px auto;
+  margin: 30px auto;
 }
 
 .login_form p {

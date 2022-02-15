@@ -31,7 +31,9 @@ function LoginForm() {
 
   return (
     <form className={styles.login_form}>
-      <h1> Log In to MaRecipe</h1>
+      <h1>
+        Log In to <span>MaRecipe</span>
+      </h1>
       <LabelInputV2
         inputId="login-email"
         label="E-mail address"
