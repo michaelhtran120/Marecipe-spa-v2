@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // Component imports
-// import Input from "../Input/Input";
-// import Label from "../Label/Label";
+
 import Button from "../../Buttons/Button";
 
 // Style import
@@ -13,8 +12,8 @@ import LabelInputV2 from "../../LabelInput/LabelInputV2";
 
 function LoginForm() {
   const [inputs, setInputs] = useState({
-    email: "",
-    password: "",
+    login_email: "",
+    login_password: "",
   });
   const handleChange = (event: any) => {
     const { name, value } = event.target;
@@ -35,33 +34,17 @@ function LoginForm() {
         Log In to <span>MaRecipe</span>
       </h1>
       <LabelInputV2
-        inputId="login-email"
+        inputId="login_email"
         label="E-mail address"
         type="email"
         handleChange={handleChange}
       />
       <LabelInputV2
-        inputId="login-password"
+        inputId="login_password"
         label="Password"
         type="password"
         handleChange={handleChange}
       />
-      {/* <Label title="Email" inputId="login-email" />
-      <Input
-        inputId="login-email"
-        placeholder="Enter email"
-        type="email"
-        handleChange={handleChange}
-        value={inputs.email}
-      />
-      <Label title="Password" inputId="login-password" />
-      <Input
-        inputId="login-password"
-        placeholder="Enter password"
-        type="password"
-        handleChange={handleChange}
-        value={inputs.password}
-      /> */}
       <Button
         variant="primary"
         handleClick={(event: SubmitEvent) => handleLogin(event)}
