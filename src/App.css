@@ -3,6 +3,7 @@
   padding: 0;
   max-width: 100%;
   box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
 
   /* Color Variables */
   --primary-color: #79b473;

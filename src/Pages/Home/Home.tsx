@@ -1,4 +1,5 @@
 import React from "react";
+import FormInput from "../../Components/Forms/FormInput/FormInput";
 
 function Home() {
   // const handleToggle = () => {
@@ -7,8 +8,15 @@ function Home() {
   //   }, 1000);
   // };
   return (
-    <div>
-      <br />
+    <div style={{ width: "500px", padding: "20px" }}>
+      <FormInput
+        inputId="test"
+        placeholder="test"
+        type="text"
+        handleChange={() => {
+          console.log("changing");
+        }}
+      />
     </div>
   );
 }
