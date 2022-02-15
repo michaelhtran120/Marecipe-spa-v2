@@ -1,3 +1,9 @@
+# MaRecipe v2
+
+This project is a passion project that is being redone. Thinking about how I first approach developing this application, I determined that I would prefer to minimize the amount of code within JSX. The architecture could have been better optimize and after learnig back-end with Express and MongoDB, I have a better idea of how I would like to build my front-end. 
+
+Will continue to update README as I continue developing this project.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
