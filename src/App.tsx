@@ -12,7 +12,7 @@ import LogIn from "./Pages/LogIn/LoginPage";
 import Recipe from "./Pages/Recipes/Recipe";
 import Shopping from "./Pages/Shopping/Shopping";
 import Navbar from "./Components/Navbar/Navbar";
-import SignUp from "./Pages/SignUp/SignUp";
+import SignUpPage from "./Pages/SignUp/SignUpPage";
 
 // Component imports
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="recipe" element={<Recipe />} />
         <Route path="shopping" element={<Shopping />} />
         <Route path="login" element={<LogIn />} />
-        <Route path="signup" element={<SignUp />} />
+        <Route path="signup" element={<SignUpPage />} />
       </Routes>
     </div>
   );

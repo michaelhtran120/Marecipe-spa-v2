@@ -47,7 +47,7 @@ function LabelInput({
         {label}
       </label>
       <input
-        data-testId="input"
+        data-testid="input"
         ref={inputRef}
         className={styles.input}
         type={type}
