@@ -36,6 +36,7 @@ function MobileNavbar() {
           <>
             <Link to="/recipe">Recipe</Link>
             <Link to="/shopping">Shopping</Link>
+            <Link to="/login">Log In</Link>
             <Link to="/signup">Sign Up</Link>
           </>
         ) : null}

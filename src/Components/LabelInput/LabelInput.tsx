@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import styles from "./LabelInput.module.css";
 
-type LabelInputProp = {
+export type LabelInputProp = {
   inputId: string;
   label: string;
   type: string;
@@ -10,7 +10,7 @@ type LabelInputProp = {
   required?: boolean;
 };
 
-function LabelInputV2({
+function LabelInput({
   inputId,
   label,
   type,
@@ -47,6 +47,7 @@ function LabelInputV2({
         {label}
       </label>
       <input
+        data-testId="input"
         ref={inputRef}
         className={styles.input}
         type={type}
@@ -59,8 +60,8 @@ function LabelInputV2({
   );
 }
 
-LabelInputV2.defaultProps = {
+LabelInput.defaultProps = {
   required: false,
 };
 
-export default LabelInputV2;
+export default LabelInput;

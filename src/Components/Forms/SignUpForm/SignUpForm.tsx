@@ -5,15 +5,16 @@ import { NavLink } from "react-router-dom";
 // Component imports
 
 import Button from "../../Buttons/Button";
-
-// Style import
-import styles from "./LoginForm.module.css";
 import LabelInput from "../../LabelInput/LabelInput";
 
-function LoginForm() {
+// Style import
+import styles from "./SignUpForm.module.css";
+
+function SignUpForm() {
   const [inputs, setInputs] = useState({
-    login_email: "",
-    login_password: "",
+    signup_email: "",
+    signup_password: "",
+    password_confirm: "",
   });
   const handleChange = (event: any) => {
     const { name, value } = event.target;
@@ -23,48 +24,54 @@ function LoginForm() {
     });
   };
 
-  const handleLogin = (event: SubmitEvent) => {
+  const handleSignUp = (event: SubmitEvent) => {
     // event.preventDefault();
     console.log("logging in", event);
   };
 
   return (
-    <form className={styles.login_form}>
+    <form className={styles.signup_form}>
       <h1>
-        Log In to <span>MaRecipe</span>
+        Sign up with
+        <br />
+        <span>MaRecipe</span>
       </h1>
       <LabelInput
-        inputId="login_email"
+        inputId="signup_email"
         label="E-mail address"
         type="email"
         handleChange={handleChange}
         required
       />
       <LabelInput
-        inputId="login_password"
+        inputId="signup_password"
         label="Password"
+        type="password"
+        handleChange={handleChange}
+        required
+      />
+      <LabelInput
+        inputId="confirm_password"
+        label="Confirm Password"
         type="password"
         handleChange={handleChange}
         required
       />
       <Button
         variant="primary"
-        handleClick={(event: SubmitEvent) => handleLogin(event)}
+        handleClick={(event: SubmitEvent) => handleSignUp(event)}
         submit
       >
-        Log In
+        Sign Up
       </Button>
 
       <br />
       <p>
-        Don&apos;t have an account? Click here to{" "}
-        <NavLink to="/signup">sign up</NavLink>
-      </p>
-      <br />
-      <p>
-        <NavLink to="/forgot-password">Forgot Password</NavLink>?
+        Already have an account?
+        <br />
+        Click here to <NavLink to="/login">Log In</NavLink>
       </p>
     </form>
   );
 }
-export default LoginForm;
+export default SignUpForm;

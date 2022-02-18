@@ -8,7 +8,7 @@ import styles from "./LoginButton.module.css";
 function LoginButton() {
   return (
     <div className={styles["signin-li"]}>
-      <Link to="/signin" className={`${styles["signin-button-link"]} _button`}>
+      <Link to="/login" className={`${styles["signin-button-link"]} _button`}>
         <span>Sign In</span>
       </Link>
     </div>

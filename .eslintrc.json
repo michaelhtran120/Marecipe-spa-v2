@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -49,5 +50,6 @@
     // "import/parsers": {
     //   "@typescript-eslint/parser": [".ts", ".tsx"]
     // }
-  }
+  },
+  "ignorePatterns": ["*.test.tsx"]
 }
