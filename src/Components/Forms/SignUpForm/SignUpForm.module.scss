@@ -7,6 +7,13 @@
   border: 2px solid var(--primary-color);
   border-radius: 15px;
   z-index: 10;
+  .name_form_group {
+    display: flex;
+    justify-content: space-between;
+    .spacer {
+      width: 10px;
+    }
+  }
   h1 {
     text-align: center;
     color: var(--white);

@@ -9,6 +9,19 @@
   z-index: 10;
 }
 
+.signup_form .name_form_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.signup_form .name_form_group .spacer {
+  width: 10px;
+}
+
 .signup_form h1 {
   text-align: center;
   color: var(--white);

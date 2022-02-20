@@ -12,6 +12,8 @@ import styles from "./SignUpForm.module.css";
 
 function SignUpForm() {
   const [inputs, setInputs] = useState({
+    first_name: "",
+    last_name: "",
     signup_email: "",
     signup_password: "",
     password_confirm: "",
@@ -36,6 +38,23 @@ function SignUpForm() {
         <br />
         <span>MaRecipe</span>
       </h1>
+      <div className={styles.name_form_group}>
+        <LabelInput
+          inputId="first_name"
+          label="First Name"
+          type="text"
+          handleChange={handleChange}
+          required
+        />
+        <div className={styles.spacer}> </div>
+        <LabelInput
+          inputId="last_name"
+          label="Last Name"
+          type="text"
+          handleChange={handleChange}
+          required
+        />
+      </div>
       <LabelInput
         inputId="signup_email"
         label="E-mail address"
@@ -51,7 +70,7 @@ function SignUpForm() {
         required
       />
       <LabelInput
-        inputId="confirm_password"
+        inputId="password"
         label="Confirm Password"
         type="password"
         handleChange={handleChange}
