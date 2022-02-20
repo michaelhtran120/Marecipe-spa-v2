@@ -1,7 +1,8 @@
 .signup_form {
   width: 75%;
-  max-width: 500px;
+  max-width: 550px;
   margin: auto;
+  margin-top: 20px;
   padding: 15px 30px 50px 30px;
   background-color: var(--black);
   border: 2px solid var(--primary-color);
@@ -10,14 +11,11 @@
   .name_form_group {
     display: flex;
     justify-content: space-between;
-    .spacer {
-      width: 10px;
-    }
   }
   h1 {
     text-align: center;
     color: var(--white);
-    padding: 25px 10px;
+    padding: 15px 10px;
     span {
       color: var(--primary-color);
     }

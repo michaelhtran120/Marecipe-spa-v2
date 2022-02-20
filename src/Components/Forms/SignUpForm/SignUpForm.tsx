@@ -46,7 +46,6 @@ function SignUpForm() {
           handleChange={handleChange}
           required
         />
-        <div className={styles.spacer}> </div>
         <LabelInput
           inputId="last_name"
           label="Last Name"
