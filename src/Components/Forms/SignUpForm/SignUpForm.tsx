@@ -1,5 +1,5 @@
 // React & Library imports
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // Component imports
@@ -31,6 +31,10 @@ function SignUpForm() {
     console.log("logging in", event);
   };
 
+  useEffect(() => {
+    console.log(inputs);
+  }, [inputs]);
+
   return (
     <form className={styles.signup_form}>
       <h1>
@@ -45,6 +49,7 @@ function SignUpForm() {
           type="text"
           handleChange={handleChange}
           required
+          autocomplete="given-name"
         />
         <LabelInput
           inputId="last_name"
@@ -52,6 +57,7 @@ function SignUpForm() {
           type="text"
           handleChange={handleChange}
           required
+          autocomplete="family-name"
         />
       </div>
       <LabelInput
@@ -60,6 +66,7 @@ function SignUpForm() {
         type="email"
         handleChange={handleChange}
         required
+        autocomplete="email"
       />
       <LabelInput
         inputId="signup_password"
@@ -70,7 +77,7 @@ function SignUpForm() {
         autocomplete="new-password"
       />
       <LabelInput
-        inputId="password"
+        inputId="password_confirm"
         label="Confirm Password"
         type="password"
         handleChange={handleChange}

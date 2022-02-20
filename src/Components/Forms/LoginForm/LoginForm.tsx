@@ -39,6 +39,7 @@ function LoginForm() {
         type="email"
         handleChange={handleChange}
         required
+        autocomplete="email"
       />
       <LabelInput
         inputId="login_password"
