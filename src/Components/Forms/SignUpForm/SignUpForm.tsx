@@ -56,7 +56,7 @@ function SignUpForm() {
       </div>
       <LabelInput
         inputId="signup_email"
-        label="E-mail address"
+        label="E-mail Address"
         type="email"
         handleChange={handleChange}
         required

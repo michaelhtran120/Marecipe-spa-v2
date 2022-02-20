@@ -18,27 +18,40 @@ describe("SignUp Form", () => {
 
   afterEach(() => cleanup());
 
+  test("Header renders", () => {
+    const header = screen.getByRole("heading", {
+      name: /Sign up with MaRecipe/,
+    });
+    expect(header).toBeInTheDocument();
+  });
+
   test("Form renders labels correctly", () => {
-    const emailLabel = screen.getByLabelText(/e\-mail address/i);
-    const passwordLabel = screen.getByLabelText(/^password/i);
-    const confirmPasswordLabel = screen.getByLabelText(/^confirm/i);
+    const firstNameLabel = screen.getByLabelText(/First Name/);
+    const lastNameLabel = screen.getByLabelText(/Last Name/);
+    const emailLabel = screen.getByLabelText(/E\-mail Address/);
+    const passwordLabel = screen.getByLabelText(/^Password/);
+    const confirmPasswordLabel = screen.getByLabelText(/^Confirm/);
     expect(
-      emailLabel && passwordLabel && confirmPasswordLabel
+      firstNameLabel &&
+        lastNameLabel &&
+        emailLabel &&
+        passwordLabel &&
+        confirmPasswordLabel
     ).toBeInTheDocument();
   });
 
-  // test("Both inputs render", () => {
-  //   const inputs = screen.getAllByTestId("input");
-  //   expect(inputs.length).toBe(5);
-  // });
+  test("All inputs render", () => {
+    const inputs = screen.getAllByTestId("input");
+    expect(inputs.length).toBe(5);
+  });
 
-  // test("Login Button renders", () => {
-  //   const loginBtn = screen.getByRole("button", { name: /log in/i });
-  //   expect(loginBtn).toBeInTheDocument();
-  // });
+  test("Sign Up Button renders", () => {
+    const signUpBtn = screen.getByRole("button", { name: /Sign Up/i });
+    expect(signUpBtn).toBeInTheDocument();
+  });
 
-  // test("Sign Up Link renders", () => {
-  //   const signUpLink = screen.getByRole("link", { name: /sign up/i });
-  //   expect(signUpLink).toBeInTheDocument();
-  // });
+  test("Log In Link renders", () => {
+    const logInLink = screen.getByRole("link", { name: /Log in/i });
+    expect(logInLink).toBeInTheDocument();
+  });
 });
