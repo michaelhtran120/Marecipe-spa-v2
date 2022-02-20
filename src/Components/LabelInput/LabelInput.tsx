@@ -8,6 +8,7 @@ export type LabelInputProp = {
   type: string;
   handleChange: (event: any) => void;
   required?: boolean;
+  autocomplete?: string;
 };
 
 function LabelInput({
@@ -16,6 +17,7 @@ function LabelInput({
   type,
   handleChange,
   required,
+  autocomplete,
 }: LabelInputProp) {
   const labelInputGroupRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,6 +57,7 @@ function LabelInput({
         id={inputId}
         onChange={handleChange}
         required={required}
+        autoComplete={autocomplete}
       />
     </div>
   );

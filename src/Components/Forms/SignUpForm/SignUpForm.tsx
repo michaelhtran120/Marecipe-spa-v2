@@ -67,6 +67,7 @@ function SignUpForm() {
         type="password"
         handleChange={handleChange}
         required
+        autocomplete="new-password"
       />
       <LabelInput
         inputId="password"
@@ -74,6 +75,7 @@ function SignUpForm() {
         type="password"
         handleChange={handleChange}
         required
+        autocomplete="new-password"
       />
       <Button
         variant="primary"

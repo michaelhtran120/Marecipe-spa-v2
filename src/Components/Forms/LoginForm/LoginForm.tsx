@@ -46,6 +46,7 @@ function LoginForm() {
         type="password"
         handleChange={handleChange}
         required
+        autocomplete="current-password"
       />
       <Button
         variant="primary"
