@@ -6,47 +6,39 @@
   bottom: 10px;
   left: 15px;
   font-weight: 300;
-  color: var(--white);
+  color: #fafafa;
   z-index: 11;
-  -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
 
 .active .label {
   font-weight: 300;
-  color: var(--primary-color);
+  color: #79b473;
   font-size: 18px;
   left: 0;
-  -webkit-transform: translateY(-36px);
-          transform: translateY(-36px);
+  transform: translateY(-36px);
 }
 
 .input {
   font-size: 18px;
   border-radius: 5px;
   padding: 8px 4px 10px 10px;
-  border: 2px solid var(--secondary-color);
-  color: white;
-  background: rgba(0, 0, 0, 0);
+  border: 2px solid #a1aaaa;
+  color: #fafafa;
+  background: #1a1a1a;
 }
-
 .input:focus {
-  outline: 3px inset var(--primary-color);
+  outline: 3px inset #79b473;
   border: none;
 }
 
 .inputGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   margin: 35px 0px 10px 0px;
 }
-
 .inputGroup label,
 .inputGroup input {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  flex: 0 0 100%;
   max-width: 100%;
 }

@@ -8,8 +8,8 @@
   margin: auto;
   margin-top: 20px;
   padding: 15px 30px 50px 30px;
-  background-color: var(--black);
-  border: 2px solid var(--primary-color);
+  background-color: #1a1a1a;
+  border: 2px solid #79b473;
   border-radius: 15px;
   z-index: 10;
 }
@@ -19,11 +19,11 @@
 }
 .signup_form h1 {
   text-align: center;
-  color: var(--white);
+  color: #fafafa;
   padding: 15px 10px;
 }
 .signup_form h1 span {
-  color: var(--primary-color);
+  color: #79b473;
 }
 .signup_form button {
   display: block;
@@ -32,10 +32,10 @@
 }
 .signup_form p {
   text-align: center;
-  color: var(--white);
+  color: #fafafa;
 }
 .signup_form a {
-  color: var(--primary-color);
+  color: #79b473;
 }
 @media screen and (max-width: 698px) {
   .signup_form {

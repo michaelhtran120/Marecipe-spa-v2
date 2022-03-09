@@ -1,67 +1,45 @@
 .menu_btn {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 70px;
   height: 70px;
   cursor: pointer;
-  -webkit-animation: all 0.45s ease-in-out;
-          animation: all 0.45s ease-in-out;
+  animation: all 0.45s ease-in-out;
 }
-
 .menu_btn .menu_btn_burger {
   width: 40px;
   height: 5px;
-  background: var(--primary-color);
+  background: #79b473;
   border-radius: 5px;
-  -webkit-transition: all 0.45s ease-in-out;
   transition: all 0.45s ease-in-out;
 }
-
 .menu_btn .menu_btn_burger::before, .menu_btn .menu_btn_burger::after {
   content: "";
   position: absolute;
   width: 40px;
   height: 5px;
-  background: var(--primary-color);
+  background: #79b473;
   border-radius: 5px;
 }
-
 .menu_btn .menu_btn_burger::before {
-  -webkit-transition: 0.45s ease-in-out;
   transition: 0.45s ease-in-out;
-  -webkit-transform: translateY(-12px);
-          transform: translateY(-12px);
+  transform: translateY(-12px);
 }
-
 .menu_btn .menu_btn_burger::after {
-  -webkit-transition: 0.45s ease-in-out;
   transition: 0.45s ease-in-out;
-  -webkit-transform: translateY(12px);
-          transform: translateY(12px);
+  transform: translateY(12px);
 }
 
 .menu_btn.open .menu_btn_burger {
-  -webkit-transform: translateX(-50px);
-          transform: translateX(-50px);
+  transform: translateX(-50px);
   background: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
 .menu_btn.open .menu_btn_burger::before {
-  -webkit-transform: rotate(45deg) translate(35px, -35px);
-          transform: rotate(45deg) translate(35px, -35px);
+  transform: rotate(45deg) translate(35px, -35px);
 }
-
 .menu_btn.open .menu_btn_burger::after {
-  -webkit-transform: rotate(-45deg) translate(35px, 35px);
-          transform: rotate(-45deg) translate(35px, 35px);
+  transform: rotate(-45deg) translate(35px, 35px);
 }

@@ -1,69 +1,59 @@
 .button {
   padding: 10px 14px;
   font-size: 18px;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-transition: all 0.45s ease-in-out;
   transition: all 0.45s ease-in-out;
 }
-
 .button:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  -webkit-box-shadow: 0px 8px 15px rgba(155, 155, 155, 0.2);
-          box-shadow: 0px 8px 15px rgba(155, 155, 155, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(155, 155, 155, 0.2);
 }
 
 .primary {
-  background-color: var(--primary-color);
-  color: var(--black);
+  background-color: #79b473;
+  color: #1a1a1a;
 }
-
 .primary:hover {
-  background-color: var(--primary-color-hover);
-  color: var(--white);
+  background-color: #528e4c;
+  color: #fafafa;
 }
 
 .primary_outline {
   background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  color: #79b473;
+  border: 2px solid #79b473;
 }
-
 .primary_outline:hover {
-  background-color: var(--primary-color);
-  color: var(--black);
+  background-color: #79b473;
+  color: #1a1a1a;
 }
 
 .secondary {
-  background-color: var(--secondary-color);
-  color: var(--black);
+  background-color: #a1aaaa;
+  color: #1a1a1a;
 }
-
 .secondary:hover {
-  background-color: var(--secondary-color-hover);
-  color: var(--white);
+  background-color: #798686;
+  color: #fafafa;
 }
 
 .secondary_outline {
   background-color: transparent;
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
+  color: #a1aaaa;
+  border: 2px solid #a1aaaa;
 }
-
 .secondary_outline:hover {
-  background-color: var(--secondary-color);
-  color: var(--black);
+  background-color: #a1aaaa;
+  color: #1a1a1a;
 }
 
 .danger {
-  background-color: var(--red);
-  color: white;
+  background-color: #db5461;
+  color: #fafafa;
 }
-
 .danger:hover {
-  background-color: var(--red-button-hover);
+  background-color: #bb2736;
 }

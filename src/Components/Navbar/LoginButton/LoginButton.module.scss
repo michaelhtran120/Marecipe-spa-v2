@@ -1,3 +1,5 @@
+@use "../../../styles/" as *;
+
 .signin-li {
   .signin-button-link {
     display: flex;
@@ -9,7 +11,7 @@
     font-size: 18px;
     transition: all 0.4s;
     cursor: pointer;
-    color: var(--primary-color);
+    color: clr(primary);
 
     &:before {
       content: none;
@@ -17,7 +19,7 @@
 
     &:hover span {
       padding-right: 30px;
-      color: var(--primary-color);
+      color: clr(primary);
     }
     &:hover span:after {
       opacity: 1;
@@ -43,7 +45,7 @@
         width: 20px;
         right: -30px;
         transition: 0.5s;
-        background-color: var(--primary-color);
+        background-color: clr(primary);
       }
     }
   }

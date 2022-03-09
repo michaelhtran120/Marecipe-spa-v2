@@ -1,5 +1,39 @@
 $primary-color: #79b473;
 $secondary-color: #a1aaaa;
-$white: #fff;
+$white: rgb(250, 250, 250);
 $black: #1a1a1a;
 $red: rgb(219, 84, 97);
+
+$lighten: 5;
+$darken: 15;
+
+$colors: (
+  primary: (
+    base: $primary-color,
+    light: lighten($primary-color, $lighten),
+    dark: darken($primary-color, $darken),
+  ),
+  secondary: (
+    base: $secondary-color,
+    light: lighten($secondary-color, $lighten),
+    dark: darken($secondary-color, $darken),
+  ),
+  red: (
+    base: $red,
+    light: lighten($red, $lighten),
+    dark: darken($red, $darken),
+  ),
+  neutral: (
+    base: #69777f,
+    light: $white,
+    dark: $black,
+  ),
+  background-overlay: (
+    base: rgba(0, 0, 0, 0.25),
+  ),
+);
+
+@function clr($base, $shade: base) {
+  $color: map-get(map-get($colors, $base), $shade);
+  @return $color;
+}

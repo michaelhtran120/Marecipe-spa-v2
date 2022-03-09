@@ -1,3 +1,5 @@
+@use "../../../styles/" as *;
+
 .navbar_container {
   height: 70px;
   top: 0;
@@ -6,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: white;
+  background-color: clr(neutral, light);
   @media screen and (max-width: 650px) {
     display: none;
   }
@@ -28,7 +30,7 @@
           font-size: var(--nav-link-font-size);
           transition: color 0.5s ease;
           &:hover {
-            color: var(--primary-color);
+            color: clr(primary);
           }
         }
       }

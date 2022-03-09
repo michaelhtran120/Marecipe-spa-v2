@@ -1,3 +1,5 @@
+@use "../../../styles/" as *;
+
 .navbar_container {
   position: relative;
   width: 100%;
@@ -6,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: white;
+  background-color: clr(neutral, light);
   @media screen and (min-width: 650px) {
     display: none;
   }
@@ -39,11 +41,11 @@
     a {
       padding: 8px 0;
       text-decoration: none;
-      color: black;
+      color: clr(neutral, dark);
       font-size: var(--nav-link-font-size);
       transition: all 0.5s ease;
       &:hover {
-        color: var(--primary-color);
+        color: clr(primary);
       }
     }
     a:last-child {

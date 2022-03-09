@@ -1,3 +1,5 @@
+@use "../../styles/" as *;
+
 .login_page {
   position: relative;
   display: flex;
@@ -12,7 +14,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: clr(background-overlay);
     z-index: 1;
   }
 }

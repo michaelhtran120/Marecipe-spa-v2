@@ -3,43 +3,39 @@
   max-width: 500px;
   margin: auto;
   padding: 25px 30px 70px 30px;
-  background-color: var(--black);
-  border: 2px solid var(--primary-color);
+  background-color: #1a1a1a;
+  border: 2px solid #79b473;
   border-radius: 15px;
   z-index: 10;
 }
-
 .login_form h1 {
   text-align: center;
   color: var(--white);
   padding: 25px 10px;
 }
-
 .login_form h1 span {
-  color: var(--primary-color);
+  color: #79b473;
 }
-
 .login_form button {
   display: block;
   min-width: 200px;
   margin: 30px auto;
 }
-
 .login_form p {
   text-align: center;
-  color: var(--white);
+  color: #fafafa;
 }
-
 .login_form a {
-  color: var(--primary-color);
+  color: #89bd84;
 }
-
+.login_form a:hover {
+  color: #528e4c;
+}
 @media screen and (max-width: 698px) {
   .login_form {
     width: 90%;
   }
 }
-
 @media screen and (max-width: 450px) {
   .login_form {
     width: 100%;

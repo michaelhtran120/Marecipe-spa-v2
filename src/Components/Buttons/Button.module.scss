@@ -1,3 +1,5 @@
+@use "../../styles/" as *;
+
 .button {
   padding: 10px 14px;
   font-size: 18px;
@@ -12,45 +14,45 @@
   }
 }
 .primary {
-  background-color: var(--primary-color);
-  color: var(--black);
+  background-color: clr(primary);
+  color: clr(neutral, dark);
   &:hover {
-    background-color: var(--primary-color-hover);
-    color: var(--white);
+    background-color: clr(primary, dark);
+    color: clr(neutral, light);
   }
 }
 .primary_outline {
   background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  color: clr(primary);
+  border: 2px solid clr(primary);
   &:hover {
-    background-color: var(--primary-color);
-    color: var(--black);
+    background-color: clr(primary);
+    color: clr(neutral, dark);
   }
 }
 .secondary {
-  background-color: var(--secondary-color);
-  color: var(--black);
+  background-color: clr(secondary);
+  color: clr(neutral, dark);
   &:hover {
-    background-color: var(--secondary-color-hover);
-    color: var(--white);
+    background-color: clr(secondary, dark);
+    color: clr(neutral, light);
   }
 }
 .secondary_outline {
   background-color: transparent;
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
+  color: clr(secondary);
+  border: 2px solid clr(secondary);
   &:hover {
-    background-color: var(--secondary-color);
-    color: var(--black);
+    background-color: clr(secondary);
+    color: clr(neutral, dark);
   }
 }
 
 .danger {
-  background-color: var(--red);
-  color: white;
+  background-color: clr(red);
+  color: clr(neutral, light);
   &:hover {
-    background-color: var(--red-button-hover);
+    background-color: clr(red, dark);
   }
 }
 
