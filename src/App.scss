@@ -1,0 +1,18 @@
+@use "./styles/" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+
+  /* Text sizing */
+  --nav-link-font-size: 1.1rem;
+}
+
+body {
+  /* top padding for fixed/sticky navbar */
+  padding-top: 70px;
+  background-color: clr(neutral, dark);
+}

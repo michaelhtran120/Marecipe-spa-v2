@@ -4,9 +4,6 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
-// Style imports
-import "./index.css";
-
 // Component Imports
 import App from "./App";
 

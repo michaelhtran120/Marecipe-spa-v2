@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: clr(neutral, light);
+  background-color: clr(neutral, dark);
   @media screen and (min-width: 650px) {
     display: none;
   }
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: clr(neutral, light);
+    background-color: clr(neutral, dark);
     z-index: 100;
     .header_logo {
       width: 175px;
@@ -37,13 +37,13 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: clr(neutral, light);
+    background-color: clr(neutral, dark);
     a {
       position: initial;
       margin-left: 24px;
       padding: 8px 0;
       text-decoration: none;
-      color: clr(neutral, dark);
+      color: clr(neutral, light);
       font-size: var(--nav-link-font-size);
       transition: all 0.5s ease;
       &:hover {

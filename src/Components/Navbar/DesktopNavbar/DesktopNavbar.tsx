@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import styles from "./DesktopNavbar.module.scss";
 
 // Asset imports
-import { ReactComponent as MainHeaderLogo } from "../../../assets/images/logo.svg";
+import { ReactComponent as MainHeaderLogo } from "../../../assets/images/logo-light.svg";
 import LoginButton from "../LoginButton/LoginButton";
 
 type NavLinkProps = {

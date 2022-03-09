@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: clr(neutral, light);
+  background-color: clr(neutral, dark);
   @media screen and (max-width: 650px) {
     display: none;
   }
@@ -26,7 +26,7 @@
         display: inline-block;
         a {
           text-decoration: none;
-          color: black;
+          color: clr(neutral, light);
           font-size: var(--nav-link-font-size);
           transition: color 0.5s ease;
           &:hover {

@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Style imports
-import "./App.css";
+import "./App.scss";
 
 // Component imports
 

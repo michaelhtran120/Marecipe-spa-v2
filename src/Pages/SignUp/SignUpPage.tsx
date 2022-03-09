@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import SignUpForm from "../../Components/Forms/SignUpForm/SignUpForm";
 
-import styles from "./SignUp.module.css";
+import styles from "./SignUp.module.scss";
 
 function SignUpPage(): ReactElement {
   return (

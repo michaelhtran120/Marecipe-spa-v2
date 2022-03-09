@@ -8,7 +8,7 @@
   width: 70px;
   height: 70px;
   cursor: pointer;
-  animation: all 0.45s ease-in-out;
+  transition: transform 0.45s ease-in-out;
   .menu_btn_burger {
     width: 40px;
     height: 5px;
@@ -23,7 +23,6 @@
       height: 5px;
       background: clr(primary);
       border-radius: 5px;
-      // transition: all 0.45s ease-in-out;
     }
     &::before {
       transition: 0.45s ease-in-out;
@@ -36,16 +35,18 @@
   }
 }
 
-.menu_btn_open .menu_btn_burger {
-  transform: translateX(-50px);
-  background: transparent;
-  box-shadow: none;
+.menu_btn_open {
+  .menu_btn_burger {
+    height: 0px;
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+    &::before {
+      transform: rotate(45deg) translate(35px, -35px);
+    }
 
-  &::before {
-    transform: rotate(45deg) translate(35px, -35px);
-  }
-
-  &::after {
-    transform: rotate(-45deg) translate(35px, 35px);
+    &::after {
+      transform: rotate(-45deg) translate(35px, 35px);
+    }
   }
 }

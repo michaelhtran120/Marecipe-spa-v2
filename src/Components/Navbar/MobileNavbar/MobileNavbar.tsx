@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import "./MobileNavbar.css";
 import styles from "./MobileNavbar.module.scss";
 
-import { ReactComponent as MainHeaderLogo } from "../../../assets/images/logo.svg";
+import { ReactComponent as MainHeaderLogo } from "../../../assets/images/logo-light.svg";
 import MenuButton from "../MenuButton/MenuButton";
 
 function MobileNavbar() {
@@ -36,10 +36,18 @@ function MobileNavbar() {
         />
       </div>
       <nav className={`${styles.navbar_menu} ${openClass}`}>
-        <Link to="/recipe">Recipe</Link>
-        <Link to="/shopping">Shopping</Link>
-        <Link to="/login">Log In</Link>
-        <Link to="/signup">Sign Up</Link>
+        <Link to="/recipe" onClick={handleClick}>
+          Recipe
+        </Link>
+        <Link to="/shopping" onClick={handleClick}>
+          Shopping
+        </Link>
+        <Link to="/login" onClick={handleClick}>
+          Log In
+        </Link>
+        <Link to="/signup" onClick={handleClick}>
+          Sign Up
+        </Link>
       </nav>
     </nav>
   );
