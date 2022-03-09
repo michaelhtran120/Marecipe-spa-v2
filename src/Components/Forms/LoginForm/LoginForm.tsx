@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import Button from "../../Buttons/Button";
 
 // Style import
-import styles from "./LoginForm.module.css";
+import styles from "./LoginForm.module.scss";
 import LabelInput from "../../LabelInput/LabelInput";
 
 function LoginForm() {

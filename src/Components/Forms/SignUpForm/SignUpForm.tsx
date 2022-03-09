@@ -8,7 +8,7 @@ import Button from "../../Buttons/Button";
 import LabelInput from "../../LabelInput/LabelInput";
 
 // Style import
-import styles from "./SignUpForm.module.css";
+import styles from "./SignUpForm.module.scss";
 
 function SignUpForm() {
   const [inputs, setInputs] = useState({

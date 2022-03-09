@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useLayoutEffect, useRef } from "react";
-import styles from "./LabelInput.module.css";
+import styles from "./LabelInput.module.scss";
 
 export type LabelInputProp = {
   inputId: string;

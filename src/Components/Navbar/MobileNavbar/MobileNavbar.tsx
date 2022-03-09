@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./MobileNavbar.css";
+// import "./MobileNavbar.css";
+import styles from "./MobileNavbar.module.scss";
 
 import { ReactComponent as MainHeaderLogo } from "../../../assets/images/logo.svg";
 import MenuButton from "../MenuButton/MenuButton";
@@ -19,11 +20,14 @@ function MobileNavbar() {
     }
   };
 
+  // Conditionally render open
+  const openClass = isOpen ? styles.navbar_menu_open : "";
+
   return (
-    <nav className="navbar_container">
-      <div className="header_static">
+    <nav className={styles.navbar_container}>
+      <div className={styles.header_static}>
         <Link to="/">
-          <MainHeaderLogo className="header_logo" />
+          <MainHeaderLogo className={styles.header_logo} />
         </Link>
         <MenuButton
           isOpen={isOpen}
@@ -31,15 +35,11 @@ function MobileNavbar() {
           handleKeyPress={handleKeyPress}
         />
       </div>
-      <nav className={`navbar_menu ${isOpen ? "open" : ""}`}>
-        {isOpen ? (
-          <>
-            <Link to="/recipe">Recipe</Link>
-            <Link to="/shopping">Shopping</Link>
-            <Link to="/login">Log In</Link>
-            <Link to="/signup">Sign Up</Link>
-          </>
-        ) : null}
+      <nav className={`${styles.navbar_menu} ${openClass}`}>
+        <Link to="/recipe">Recipe</Link>
+        <Link to="/shopping">Shopping</Link>
+        <Link to="/login">Log In</Link>
+        <Link to="/signup">Sign Up</Link>
       </nav>
     </nav>
   );

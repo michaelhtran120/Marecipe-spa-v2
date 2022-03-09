@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Styles import
-import styles from "./LoginButton.module.css";
+import styles from "./LoginButton.module.scss";
 
 function LoginButton() {
   return (

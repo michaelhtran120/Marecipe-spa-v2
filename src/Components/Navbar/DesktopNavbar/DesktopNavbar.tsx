@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 // Style imports
-import styles from "./DesktopNavbar.module.css";
+import styles from "./DesktopNavbar.module.scss";
 
 // Asset imports
 import { ReactComponent as MainHeaderLogo } from "../../../assets/images/logo.svg";

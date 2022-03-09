@@ -2,7 +2,7 @@ import React from "react";
 import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
 import MobileNavBar from "./MobileNavbar/MobileNavbar";
 
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
   return (

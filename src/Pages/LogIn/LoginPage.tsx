@@ -5,7 +5,7 @@ import React, { ReactElement } from "react";
 import LoginForm from "../../Components/Forms/LoginForm/LoginForm";
 
 // Styles Import
-import styles from "./LogInPage.module.css";
+import styles from "./LogInPage.module.scss";
 
 function LogInPage(): ReactElement {
   return (

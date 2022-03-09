@@ -1,5 +1,5 @@
 import React from "react";
-import "./MenuButton.css";
+import styles from "./MenuButton.module.scss";
 
 type Props = {
   isOpen: boolean;
@@ -8,15 +8,17 @@ type Props = {
 };
 
 function MenuButton({ isOpen, handleClick, handleKeyPress }: Props) {
+  const openClass = isOpen ? styles.menu_btn_open : "";
+
   return (
     <div
       role="button"
       tabIndex={0}
-      className={`menu_btn ${isOpen ? "open" : ""}`}
+      className={`${styles.menu_btn} ${openClass}`}
       onClick={() => handleClick()}
       onKeyPress={handleKeyPress}
     >
-      <div className="menu_btn_burger" />
+      <div className={styles.menu_btn_burger} />
     </div>
   );
 }
