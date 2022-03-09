@@ -1,3 +1,7 @@
+.randomClass {
+  width: 100%;
+}
+
 .signup_form {
   width: 75%;
   max-width: 550px;
@@ -9,47 +13,35 @@
   border-radius: 15px;
   z-index: 10;
 }
-
 .signup_form .name_form_group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .signup_form h1 {
   text-align: center;
   color: var(--white);
   padding: 15px 10px;
 }
-
 .signup_form h1 span {
   color: var(--primary-color);
 }
-
 .signup_form button {
   display: block;
   min-width: 200px;
   margin: 30px auto;
 }
-
 .signup_form p {
   text-align: center;
   color: var(--white);
 }
-
 .signup_form a {
   color: var(--primary-color);
 }
-
 @media screen and (max-width: 698px) {
   .signup_form {
     width: 90%;
   }
 }
-
 @media screen and (max-width: 450px) {
   .signup_form {
     width: 100%;
