@@ -1,9 +1,5 @@
 @use "../../../styles/" as *;
 
-.randomClass {
-  width: 100%;
-}
-
 .signup_form {
   width: 75%;
   max-width: 550px;
@@ -17,10 +13,14 @@
   .name_form_group {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 600px) {
+      display: block;
+    }
   }
   h1 {
-    text-align: center;
     @include header1-typography;
+    text-align: center;
     span {
       color: clr(primary);
     }
@@ -29,19 +29,26 @@
     display: block;
     min-width: 200px;
     margin: 30px auto;
+    @media screen and (max-width: 450px) {
+      margin: 20px auto 10px auto;
+    }
   }
   p {
     text-align: center;
+    font-size: fs(p);
     color: clr(neutral, light);
   }
   a {
-    color: clr(primary);
+    color: clr(tertiary, light);
+    &:hover {
+      color: clr(tertiary, dark);
+    }
   }
   @media screen and (max-width: 698px) {
     width: 90%;
   }
   @media screen and (max-width: 450px) {
-    width: 100%;
-    border: none;
+    width: 98%;
+    padding: 5px 10px 20px 10px;
   }
 }

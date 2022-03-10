@@ -61,8 +61,8 @@ function LoginForm() {
 
       <br />
       <p>
-        Don&apos;t have an account? Click here to{" "}
-        <NavLink to="/signup">sign up</NavLink>
+        Don&apos;t have an account?{"   "}
+        <NavLink to="/signup">Click here to sign up</NavLink>
       </p>
       <br />
       <p>

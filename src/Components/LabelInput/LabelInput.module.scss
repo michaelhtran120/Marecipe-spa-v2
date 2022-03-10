@@ -3,9 +3,9 @@
 .label {
   display: block;
   border: none;
-  font-size: 18px;
+  font-size: fs(p);
   position: absolute;
-  bottom: 10px;
+  bottom: 12px;
   left: 15px;
   font-weight: 300;
   color: clr(neutral, light);
@@ -16,15 +16,16 @@
 .active .label {
   font-weight: 300;
   color: clr(primary);
-  font-size: 18px;
+  font-size: fs(p);
   left: 0;
-  transform: translateY(-36px);
+  transform: translateY(-30px);
 }
 
 .input {
-  font-size: 18px;
+  font-size: fs(p);
+  min-width: 225px;
   border-radius: 5px;
-  padding: 8px 4px 10px 10px;
+  padding: 8px 4px 8px 8px;
   border: 2px solid clr(secondary);
   color: clr(neutral, light);
   background: clr(neutral, dark);
@@ -36,9 +37,8 @@
 
 .inputGroup {
   display: flex;
-  // flex-flow: wrap row;
   position: relative;
-  margin: 35px 0px 10px 0px;
+  margin: 30px 0px 10px 0px;
   label,
   input {
     flex: 0 0 100%;

@@ -1,8 +1,9 @@
 $primary-color: #79b473;
 $secondary-color: #a1aaaa;
-$white: #FCF7F8;
+$white: #fcf7f8;
 $black: #1a1a1a;
 $red: rgb(219, 84, 97);
+$yellow: #ffc53a;
 
 $lighten: 5;
 $darken: 15;
@@ -17,6 +18,11 @@ $colors: (
     base: $secondary-color,
     light: lighten($secondary-color, $lighten),
     dark: darken($secondary-color, $darken),
+  ),
+  tertiary: (
+    base: $yellow,
+    light: lighten($yellow, $lighten),
+    dark: darken($yellow, $darken),
   ),
   red: (
     base: $red,
