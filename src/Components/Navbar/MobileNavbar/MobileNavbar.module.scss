@@ -39,12 +39,10 @@
     align-items: flex-start;
     background-color: clr(neutral, dark);
     a {
+      @include nav-links-typography;
       position: initial;
       margin-left: 24px;
       padding: 8px 0;
-      text-decoration: none;
-      color: clr(neutral, light);
-      font-size: var(--nav-link-font-size);
       transition: all 0.5s ease;
       &:hover {
         color: clr(primary);

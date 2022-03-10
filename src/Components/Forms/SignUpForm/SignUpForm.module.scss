@@ -20,8 +20,7 @@
   }
   h1 {
     text-align: center;
-    color: clr(neutral, light);
-    padding: 15px 10px;
+    @include header1-typography;
     span {
       color: clr(primary);
     }

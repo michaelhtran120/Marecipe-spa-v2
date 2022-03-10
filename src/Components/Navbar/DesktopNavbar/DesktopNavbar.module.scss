@@ -25,9 +25,7 @@
       li {
         display: inline-block;
         a {
-          text-decoration: none;
-          color: clr(neutral, light);
-          font-size: var(--nav-link-font-size);
+          @include nav-links-typography;
           transition: color 0.5s ease;
           &:hover {
             color: clr(primary);

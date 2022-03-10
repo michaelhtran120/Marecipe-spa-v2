@@ -11,8 +11,7 @@
   z-index: 10;
   h1 {
     text-align: center;
-    color: clr(neutral, light);
-    padding: 25px 10px;
+    @include header1-typography;
     span {
       color: clr(primary);
     }
@@ -24,6 +23,7 @@
   }
   p {
     text-align: center;
+    font-size: fs(p);
     color: clr(neutral, light);
   }
   a {

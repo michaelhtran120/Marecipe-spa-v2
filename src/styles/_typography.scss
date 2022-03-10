@@ -1,0 +1,48 @@
+@use "./colors" as *;
+
+$font-size: (
+  h1: (
+    base: 1.8rem,
+  ),
+  h2: (
+    base: 1.65rem,
+  ),
+  h3: (
+    base: 1.45rem,
+  ),
+  h4: (
+    base: 1.25rem,
+  ),
+  h5: (
+    base: 1.125rem,
+  ),
+  h6: (
+    base: 1rem,
+  ),
+  p: (
+    base: 1rem,
+  ),
+  nav-links: (
+    base: 1.1rem,
+  ),
+);
+
+@function fs($base, $responsive: base) {
+  $fontsize: map-get(map-get($font-size, $base), $responsive);
+  @return $fontsize;
+}
+
+@mixin nav-links-typography {
+  font-size: fs(nav-links);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  color: clr(neutral, light);
+}
+
+@mixin header1-typography {
+  font-size: fs(h1);
+  letter-spacing: 1px;
+  padding: 15px 10px;
+  color: clr(neutral, light);
+}
