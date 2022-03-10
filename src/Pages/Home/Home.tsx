@@ -1,4 +1,5 @@
 import React from "react";
+import RecipeForm from "../../Components/Forms/RecipeForm/RecipeForm";
 
 function Home() {
   // const handleToggle = () => {
@@ -11,6 +12,7 @@ function Home() {
     <div style={{ height: "120px", width: "500px", padding: "20px" }}>
       Home Page
       <br />
+      <RecipeForm />
     </div>
   );
 }
