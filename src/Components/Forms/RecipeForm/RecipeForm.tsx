@@ -16,6 +16,7 @@ function RecipeForm(): JSX.Element {
   const [inputs, setInputs] = useState({
     title: "",
     imageUrl: "",
+    description: "",
   });
 
   const handleChange = (event: any) => {
@@ -42,12 +43,17 @@ function RecipeForm(): JSX.Element {
             type="text"
             handleChange={handleChange}
           />
-        </div>
-        <div>
-          <img
-            src={inputs.imageUrl ? inputs.imageUrl : ""}
-            alt="recipe photo submitted by user"
+          <LabelInput
+            label="Description"
+            inputId="description"
+            type="textarea"
+            handleChange={handleChange}
           />
+        </div>
+        <div className={styles.right_side}>
+          {inputs.imageUrl ? (
+            <img src={inputs.imageUrl} alt="recipe photo submitted by user" />
+          ) : null}
         </div>
       </div>
     </form>

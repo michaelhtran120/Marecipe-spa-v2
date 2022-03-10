@@ -9,7 +9,15 @@ function Home() {
   // };
 
   return (
-    <div style={{ height: "120px", width: "500px", padding: "20px" }}>
+    <div
+      style={{
+        height: "auto",
+        width: "100%",
+        padding: "20px",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       Home Page
       <br />
       <RecipeForm />

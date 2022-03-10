@@ -21,9 +21,17 @@ function LabelInput({
 }: LabelInputProp) {
   const labelInputGroupRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useLayoutEffect(() => {
-    const { current } = inputRef;
+    function checkInput() {
+      if (type === "textarea") {
+        return textareaRef;
+      }
+      return inputRef;
+    }
+
+    const { current } = checkInput();
 
     const handleFocus = () => {
       labelInputGroupRef.current?.classList.add(styles.active);
@@ -48,17 +56,26 @@ function LabelInput({
       <label htmlFor={inputId} className={styles.label}>
         {label}
       </label>
-      <input
-        data-testid="input"
-        ref={inputRef}
-        className={styles.input}
-        type={type}
-        name={inputId}
-        id={inputId}
-        onChange={handleChange}
-        required={required}
-        autoComplete={autocomplete}
-      />
+      {type === "textarea" ? (
+        <textarea
+          ref={textareaRef}
+          className={styles.textarea}
+          rows={3}
+          maxLength={150}
+        />
+      ) : (
+        <input
+          data-testid="input"
+          ref={inputRef}
+          className={styles.input}
+          type={type}
+          name={inputId}
+          id={inputId}
+          onChange={handleChange}
+          required={required}
+          autoComplete={autocomplete}
+        />
+      )}
     </div>
   );
 }
