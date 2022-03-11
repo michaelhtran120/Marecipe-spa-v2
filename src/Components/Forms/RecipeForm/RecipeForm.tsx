@@ -20,6 +20,8 @@ type Ingredients = {
 };
 
 function RecipeForm(): JSX.Element {
+  const [addIngredientBtnState, setAddIngredientBtnState] = useState(false);
+
   const [inputs, setInputs] = useState({
     title: "",
     imageUrl: "",
@@ -37,6 +39,24 @@ function RecipeForm(): JSX.Element {
     },
   ]);
 
+  useEffect(() => {
+    const checkForEmpty = () => {
+      for (let i = 0; i < ingredientList.length; i += 1) {
+        if (
+          ingredientList[i].name === "" ||
+          ingredientList[i].weight === "" ||
+          ingredientList[i].carbs === "" ||
+          ingredientList[i].proteins === "" ||
+          ingredientList[i].fats === ""
+        ) {
+          return true;
+        }
+      }
+      return false;
+    };
+    setAddIngredientBtnState(checkForEmpty());
+  }, [ingredientList]);
+
   const addIngredient = () => {
     setIngredientList([
       ...ingredientList,
@@ -52,7 +72,6 @@ function RecipeForm(): JSX.Element {
   };
 
   let updatedIngredientList: Ingredients[];
-
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -86,10 +105,6 @@ function RecipeForm(): JSX.Element {
     }
   };
 
-  useEffect(() => {
-    console.log(ingredientList, inputs);
-  }, [ingredientList, inputs]);
-
   return (
     <form className={styles.recipe_form_container}>
       <div className={styles.input_image_container}>
@@ -122,44 +137,58 @@ function RecipeForm(): JSX.Element {
       <div className={styles.bottom_container}>
         {ingredientList.map((i) => (
           <div key={i.id} className={styles.ingredient}>
-            <LabelInput
-              label="Ingredient Name"
-              inputId="name"
-              type="text"
-              dataId={i.id}
-              handleChange={handleChange}
-            />
-            <LabelInput
-              label="Qty in grams"
-              inputId="weight"
-              type="number"
-              dataId={i.id}
-              handleChange={handleChange}
-            />
-            <LabelInput
-              label="Carbs"
-              inputId="carbs"
-              type="number"
-              dataId={i.id}
-              handleChange={handleChange}
-            />
-            <LabelInput
-              label="Proteins"
-              inputId="proteins"
-              type="number"
-              dataId={i.id}
-              handleChange={handleChange}
-            />
-            <LabelInput
-              label="Fats"
-              inputId="fats"
-              type="number"
-              dataId={i.id}
-              handleChange={handleChange}
-            />
+            <div className={styles.input_1}>
+              <LabelInput
+                label="Ingredient Name"
+                inputId="name"
+                type="text"
+                dataId={i.id}
+                handleChange={handleChange}
+              />
+            </div>
+            <div className={styles.input_2}>
+              <LabelInput
+                label="Qty in grams"
+                inputId="weight"
+                type="number"
+                dataId={i.id}
+                handleChange={handleChange}
+              />
+            </div>
+            <div className={styles.input_3}>
+              <LabelInput
+                label="Carbs"
+                inputId="carbs"
+                type="number"
+                dataId={i.id}
+                handleChange={handleChange}
+              />
+            </div>
+            <div className={styles.input_4}>
+              <LabelInput
+                label="Proteins"
+                inputId="proteins"
+                type="number"
+                dataId={i.id}
+                handleChange={handleChange}
+              />
+            </div>
+            <div className={styles.input_5}>
+              <LabelInput
+                label="Fats"
+                inputId="fats"
+                type="number"
+                dataId={i.id}
+                handleChange={handleChange}
+              />
+            </div>
           </div>
         ))}
-        <button type="button" onClick={addIngredient}>
+        <button
+          type="button"
+          onClick={addIngredient}
+          disabled={addIngredientBtnState}
+        >
           Add
         </button>
       </div>
