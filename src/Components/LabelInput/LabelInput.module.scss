@@ -21,7 +21,8 @@
   transform: translateY(-30px);
 }
 
-.input, .textarea {
+.input,
+.textarea {
   font-size: fs(p);
   width: 100%;
   min-width: 225px;
@@ -34,6 +35,10 @@
     outline: 3px inset clr(primary);
     border: none;
   }
+}
+
+.textarea {
+  padding: 12px;
 }
 
 .inputGroup {

@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-// React Imports
-import React, { useState } from "react";
+
+// React and library imports
+import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 // Component Import
 import LabelInput from "../../LabelInput/LabelInput";
@@ -8,10 +10,15 @@ import LabelInput from "../../LabelInput/LabelInput";
 // Style import
 import styles from "./RecipeForm.module.scss";
 
-/**
- *
- * @returns JSX
- */
+type Ingredients = {
+  id: string;
+  name: string;
+  weight: string;
+  proteins: string;
+  carbs: string;
+  fats: string;
+};
+
 function RecipeForm(): JSX.Element {
   const [inputs, setInputs] = useState({
     title: "",
@@ -19,13 +26,69 @@ function RecipeForm(): JSX.Element {
     description: "",
   });
 
-  const handleChange = (event: any) => {
-    const { name, value } = event.target;
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
+  const [ingredientList, setIngredientList] = useState<Ingredients[]>([
+    {
+      id: uuidv4(),
+      name: "",
+      weight: "",
+      carbs: "",
+      proteins: "",
+      fats: "",
+    },
+  ]);
+
+  const addIngredient = () => {
+    setIngredientList([
+      ...ingredientList,
+      {
+        id: uuidv4(),
+        name: "",
+        weight: "",
+        carbs: "",
+        proteins: "",
+        fats: "",
+      },
+    ]);
   };
+
+  let updatedIngredientList: Ingredients[];
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, dataset } = event.target;
+    switch (name) {
+      case "title":
+      case "imageUrl":
+      case "description":
+        setInputs({
+          ...inputs,
+          [name]: value,
+        });
+        break;
+      case "name":
+      case "weight":
+      case "carbs":
+      case "proteins":
+      case "fats":
+        updatedIngredientList = ingredientList.map((aIngredient) => {
+          if (aIngredient.id === dataset.id) {
+            return {
+              ...aIngredient,
+              [name]: value,
+            };
+          }
+          return aIngredient;
+        });
+        setIngredientList(updatedIngredientList);
+        break;
+      default:
+    }
+  };
+
+  useEffect(() => {
+    console.log(ingredientList, inputs);
+  }, [ingredientList, inputs]);
 
   return (
     <form className={styles.recipe_form_container}>
@@ -55,6 +118,50 @@ function RecipeForm(): JSX.Element {
             <img src={inputs.imageUrl} alt="recipe photo submitted by user" />
           ) : null}
         </div>
+      </div>
+      <div className={styles.bottom_container}>
+        {ingredientList.map((i) => (
+          <div key={i.id} className={styles.ingredient}>
+            <LabelInput
+              label="Ingredient Name"
+              inputId="name"
+              type="text"
+              dataId={i.id}
+              handleChange={handleChange}
+            />
+            <LabelInput
+              label="Qty in grams"
+              inputId="weight"
+              type="number"
+              dataId={i.id}
+              handleChange={handleChange}
+            />
+            <LabelInput
+              label="Carbs"
+              inputId="carbs"
+              type="number"
+              dataId={i.id}
+              handleChange={handleChange}
+            />
+            <LabelInput
+              label="Proteins"
+              inputId="proteins"
+              type="number"
+              dataId={i.id}
+              handleChange={handleChange}
+            />
+            <LabelInput
+              label="Fats"
+              inputId="fats"
+              type="number"
+              dataId={i.id}
+              handleChange={handleChange}
+            />
+          </div>
+        ))}
+        <button type="button" onClick={addIngredient}>
+          Add
+        </button>
       </div>
     </form>
   );

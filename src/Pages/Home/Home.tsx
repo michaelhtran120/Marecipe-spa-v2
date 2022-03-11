@@ -13,9 +13,8 @@ function Home() {
       style={{
         height: "auto",
         width: "100%",
-        padding: "20px",
-        display: "flex",
-        justifyContent: "center",
+        paddingTop: "20px",
+        color: "white",
       }}
     >
       Home Page

@@ -9,6 +9,7 @@ export type LabelInputProp = {
   handleChange: (event: any) => void;
   required?: boolean;
   autocomplete?: string;
+  dataId?: string;
 };
 
 function LabelInput({
@@ -18,6 +19,7 @@ function LabelInput({
   handleChange,
   required,
   autocomplete,
+  dataId,
 }: LabelInputProp) {
   const labelInputGroupRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -49,7 +51,7 @@ function LabelInput({
       current?.removeEventListener("focus", handleFocus);
       current?.removeEventListener("blur", handleBlur);
     };
-  }, []);
+  }, [type]);
 
   return (
     <div ref={labelInputGroupRef} className={styles.inputGroup}>
@@ -60,8 +62,12 @@ function LabelInput({
         <textarea
           ref={textareaRef}
           className={styles.textarea}
-          rows={3}
-          maxLength={150}
+          name={inputId}
+          id={inputId}
+          onChange={handleChange}
+          required={required}
+          rows={6}
+          maxLength={300}
         />
       ) : (
         <input
@@ -74,6 +80,7 @@ function LabelInput({
           onChange={handleChange}
           required={required}
           autoComplete={autocomplete}
+          data-id={dataId}
         />
       )}
     </div>
@@ -82,6 +89,7 @@ function LabelInput({
 
 LabelInput.defaultProps = {
   required: false,
+  dataId: null,
 };
 
 export default LabelInput;
