@@ -1,0 +1,46 @@
+@use "../../../../styles/index" as *;
+
+.ingredient {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 10px;
+  grid-template-areas: "input1 input1 input2 input3 input4 input5";
+  .input_1 {
+    grid-area: input1;
+  }
+  .input_2 {
+    grid-area: input2;
+  }
+  .input_3 {
+    grid-area: input3;
+  }
+  .input_4 {
+    grid-area: input4;
+  }
+  .input_5 {
+    grid-area: input5;
+  }
+  
+  .input {
+    font-size: fs(p);
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px 4px 8px 8px;
+    border: 2px solid clr(secondary);
+    color: clr(neutral, light);
+    background: clr(neutral, dark);
+    &:focus {
+      outline: 3px inset clr(primary);
+      border: none;
+    }
+  }
+
+  @media screen and(max-width: 850px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "input1 input1 input2"
+      "input3 input4 input5";
+  }
+}

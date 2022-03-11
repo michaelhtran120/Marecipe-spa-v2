@@ -111,7 +111,7 @@ function RecipeForm(): JSX.Element {
   };
 
   return (
-    <form className={styles.recipe_form_container}>
+    <form autoComplete="off" className={styles.recipe_form_container}>
       <div className={styles.input_image_container}>
         <div className={styles.left_side}>
           <LabelInput
@@ -120,6 +120,7 @@ function RecipeForm(): JSX.Element {
             type="text"
             handleChange={handleChange}
             value={inputs.title}
+            autocomplete="false"
           />
           <LabelInput
             label="Image URL"
@@ -127,6 +128,7 @@ function RecipeForm(): JSX.Element {
             type="text"
             handleChange={handleChange}
             value={inputs.imageUrl}
+            autocomplete="false"
           />
           <LabelInput
             label="Description"
@@ -152,6 +154,7 @@ function RecipeForm(): JSX.Element {
               dataId={ingredientList[0].id}
               handleChange={handleChange}
               value={ingredientList[0].name}
+              autocomplete="false"
             />
           </div>
           <div className={styles.input_2}>
@@ -162,6 +165,7 @@ function RecipeForm(): JSX.Element {
               dataId={ingredientList[0].id}
               handleChange={handleChange}
               value={ingredientList[0].weight}
+              autocomplete="false"
             />
           </div>
           <div className={styles.input_3}>
@@ -172,6 +176,7 @@ function RecipeForm(): JSX.Element {
               dataId={ingredientList[0].id}
               handleChange={handleChange}
               value={ingredientList[0].carbs}
+              autocomplete="false"
             />
           </div>
           <div className={styles.input_4}>
@@ -182,6 +187,7 @@ function RecipeForm(): JSX.Element {
               dataId={ingredientList[0].id}
               handleChange={handleChange}
               value={ingredientList[0].proteins}
+              autocomplete="false"
             />
           </div>
           <div className={styles.input_5}>
@@ -192,6 +198,7 @@ function RecipeForm(): JSX.Element {
               dataId={ingredientList[0].id}
               handleChange={handleChange}
               value={ingredientList[0].fats}
+              autocomplete="false"
             />
           </div>
         </div>
