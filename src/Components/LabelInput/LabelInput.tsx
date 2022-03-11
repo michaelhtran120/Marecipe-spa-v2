@@ -10,7 +10,7 @@ export type LabelInputProp = {
   required?: boolean;
   autocomplete?: string;
   dataId?: string;
-  className?: string;
+  value: string;
 };
 
 function LabelInput({
@@ -21,7 +21,7 @@ function LabelInput({
   required,
   autocomplete,
   dataId,
-  className,
+  value,
 }: LabelInputProp) {
   const labelInputGroupRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -70,12 +70,13 @@ function LabelInput({
           required={required}
           rows={6}
           maxLength={300}
+          value={value}
         />
       ) : (
         <input
           data-testid="input"
           ref={inputRef}
-          className={`${styles.input} ${className}`}
+          className={`${styles.input}`}
           type={type}
           name={inputId}
           id={inputId}
@@ -83,6 +84,7 @@ function LabelInput({
           required={required}
           autoComplete={autocomplete}
           data-id={dataId}
+          value={value}
         />
       )}
     </div>
@@ -92,7 +94,6 @@ function LabelInput({
 LabelInput.defaultProps = {
   required: false,
   dataId: null,
-  className: null,
 };
 
 export default LabelInput;

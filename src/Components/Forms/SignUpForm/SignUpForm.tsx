@@ -50,6 +50,7 @@ function SignUpForm() {
           handleChange={handleChange}
           required
           autocomplete="given-name"
+          value={inputs.first_name}
         />
         <LabelInput
           inputId="last_name"
@@ -58,6 +59,7 @@ function SignUpForm() {
           handleChange={handleChange}
           required
           autocomplete="family-name"
+          value={inputs.last_name}
         />
       </div>
       <LabelInput
@@ -67,6 +69,7 @@ function SignUpForm() {
         handleChange={handleChange}
         required
         autocomplete="email"
+        value={inputs.signup_email}
       />
       <LabelInput
         inputId="signup_password"
@@ -75,6 +78,7 @@ function SignUpForm() {
         handleChange={handleChange}
         required
         autocomplete="new-password"
+        value={inputs.signup_password}
       />
       <LabelInput
         inputId="password_confirm"
@@ -83,6 +87,7 @@ function SignUpForm() {
         handleChange={handleChange}
         required
         autocomplete="new-password"
+        value={inputs.password_confirm}
       />
       <Button
         variant="primary"

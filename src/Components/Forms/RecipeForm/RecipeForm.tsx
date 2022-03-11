@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 // Component Import
 import LabelInput from "../../LabelInput/LabelInput";
+import IngredientInput from "./IngredientInputs/IngredientInput";
 
 // Style import
 import styles from "./RecipeForm.module.scss";
@@ -71,6 +72,10 @@ function RecipeForm(): JSX.Element {
     ]);
   };
 
+  useEffect(() => {
+    console.log(ingredientList, inputs);
+  }, [ingredientList, inputs]);
+
   let updatedIngredientList: Ingredients[];
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -114,18 +119,21 @@ function RecipeForm(): JSX.Element {
             inputId="title"
             type="text"
             handleChange={handleChange}
+            value={inputs.title}
           />
           <LabelInput
             label="Image URL"
             inputId="imageUrl"
             type="text"
             handleChange={handleChange}
+            value={inputs.imageUrl}
           />
           <LabelInput
             label="Description"
             inputId="description"
             type="textarea"
             handleChange={handleChange}
+            value={inputs.description}
           />
         </div>
         <div className={styles.right_side}>
@@ -135,55 +143,70 @@ function RecipeForm(): JSX.Element {
         </div>
       </div>
       <div className={styles.bottom_container}>
-        {ingredientList.map((i) => (
-          <div key={i.id} className={styles.ingredient}>
-            <div className={styles.input_1}>
-              <LabelInput
-                label="Ingredient Name"
-                inputId="name"
-                type="text"
-                dataId={i.id}
-                handleChange={handleChange}
-              />
-            </div>
-            <div className={styles.input_2}>
-              <LabelInput
-                label="Qty in grams"
-                inputId="weight"
-                type="number"
-                dataId={i.id}
-                handleChange={handleChange}
-              />
-            </div>
-            <div className={styles.input_3}>
-              <LabelInput
-                label="Carbs"
-                inputId="carbs"
-                type="number"
-                dataId={i.id}
-                handleChange={handleChange}
-              />
-            </div>
-            <div className={styles.input_4}>
-              <LabelInput
-                label="Proteins"
-                inputId="proteins"
-                type="number"
-                dataId={i.id}
-                handleChange={handleChange}
-              />
-            </div>
-            <div className={styles.input_5}>
-              <LabelInput
-                label="Fats"
-                inputId="fats"
-                type="number"
-                dataId={i.id}
-                handleChange={handleChange}
-              />
-            </div>
+        <div key={ingredientList[0].id} className={styles.ingredient}>
+          <div className={styles.input_1}>
+            <LabelInput
+              label="Ingredient Name"
+              inputId="name"
+              type="text"
+              dataId={ingredientList[0].id}
+              handleChange={handleChange}
+              value={ingredientList[0].name}
+            />
           </div>
-        ))}
+          <div className={styles.input_2}>
+            <LabelInput
+              label="Qty in grams"
+              inputId="weight"
+              type="number"
+              dataId={ingredientList[0].id}
+              handleChange={handleChange}
+              value={ingredientList[0].weight}
+            />
+          </div>
+          <div className={styles.input_3}>
+            <LabelInput
+              label="Carbs"
+              inputId="carbs"
+              type="number"
+              dataId={ingredientList[0].id}
+              handleChange={handleChange}
+              value={ingredientList[0].carbs}
+            />
+          </div>
+          <div className={styles.input_4}>
+            <LabelInput
+              label="Proteins"
+              inputId="proteins"
+              type="number"
+              dataId={ingredientList[0].id}
+              handleChange={handleChange}
+              value={ingredientList[0].proteins}
+            />
+          </div>
+          <div className={styles.input_5}>
+            <LabelInput
+              label="Fats"
+              inputId="fats"
+              type="number"
+              dataId={ingredientList[0].id}
+              handleChange={handleChange}
+              value={ingredientList[0].fats}
+            />
+          </div>
+        </div>
+        {ingredientList.length > 1
+          ? ingredientList
+              .slice(1)
+              .map((i) => (
+                <IngredientInput
+                  key={i.id}
+                  dataId={i.id}
+                  data={i}
+                  handleChange={handleChange}
+                />
+              ))
+          : null}
         <button
           type="button"
           onClick={addIngredient}

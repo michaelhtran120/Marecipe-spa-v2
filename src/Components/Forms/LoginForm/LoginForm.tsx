@@ -42,6 +42,7 @@ function LoginForm() {
         handleChange={handleChange}
         required
         autocomplete="email"
+        value={inputs.login_email}
       />
       <LabelInput
         inputId="login_password"
@@ -50,6 +51,7 @@ function LoginForm() {
         handleChange={handleChange}
         required
         autocomplete="current-password"
+        value={inputs.login_password}
       />
       <Button
         variant="primary"

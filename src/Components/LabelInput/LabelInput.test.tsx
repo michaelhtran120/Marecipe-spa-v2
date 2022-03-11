@@ -11,6 +11,7 @@ function MockLabelInput() {
         label="E-Mail"
         type="email"
         handleChange={jest.fn()}
+        value={""}
         required
       />
     </BrowserRouter>
