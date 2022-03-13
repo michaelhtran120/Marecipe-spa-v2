@@ -1,7 +1,6 @@
 @use "../../../../styles/index" as *;
 
 .ingredient {
-  margin-bottom: 10px;
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);

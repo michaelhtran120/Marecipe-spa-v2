@@ -12,7 +12,7 @@ import IngredientInput from "./IngredientInputs/IngredientInput";
 // Style import
 import styles from "./RecipeForm.module.scss";
 
-type Inputs = {
+type RecipeGeneralInputs = {
   title: string;
   imageUrl: string;
   description: string;
@@ -37,7 +37,7 @@ function RecipeForm(): JSX.Element {
 
   const [addInstructionsBtnState, setAddInstructionBtnState] = useState(false);
 
-  const [inputs, setInputs] = useState<Inputs>({
+  const [inputs, setInputs] = useState<RecipeGeneralInputs>({
     title: "",
     imageUrl: "",
     description: "",
@@ -91,7 +91,7 @@ function RecipeForm(): JSX.Element {
     setAddInstructionBtnState(checkForEmpty());
   }, [instructionList]);
 
-  // Method to handle adding an ingredient and instructions.
+  // Methods to handle adding an ingredient and instructions.
   const addIngredient = () => {
     setIngredientList([
       ...ingredientList,
@@ -114,6 +114,20 @@ function RecipeForm(): JSX.Element {
         instruction: "",
       },
     ]);
+  };
+
+  // Methods to handle deleting an ingredient and instructions.
+
+  const deleteIngredient = (id: string) => {
+    setIngredientList(
+      ingredientList.filter((ingredient) => ingredient.id !== id)
+    );
+  };
+
+  const deleteInstruction = (id: string) => {
+    setInstructionList(
+      instructionList.filter((instruction) => instruction.id !== id)
+    );
   };
 
   useEffect(() => {
@@ -215,12 +229,20 @@ function RecipeForm(): JSX.Element {
             <p className={styles.label_5}>Fats</p>
           </div>
           {ingredientList.map((i) => (
-            <IngredientInput
-              key={i.id}
-              dataId={i.id}
-              data={i}
-              handleChange={handleInputChange}
-            />
+            <div className={styles.ingredient_list_item}>
+              <IngredientInput
+                key={i.id}
+                dataId={i.id}
+                data={i}
+                handleChange={handleInputChange}
+              />
+              <Button
+                variant="danger"
+                handleClick={() => deleteIngredient(i.id)}
+              >
+                X
+              </Button>
+            </div>
           ))}
           <Button
             variant="primary"
@@ -235,7 +257,7 @@ function RecipeForm(): JSX.Element {
           <h3>Instructions</h3>
           <ol className={styles.instruction_list}>
             {instructionList.map((instruction) => (
-              <li>
+              <li className={styles.instruction}>
                 <input
                   key={instruction.id}
                   value={instruction.instruction}
@@ -244,10 +266,15 @@ function RecipeForm(): JSX.Element {
                   onChange={handleInputChange}
                   className={styles.instruction_input}
                 />
+                <Button
+                  variant="danger"
+                  handleClick={() => deleteInstruction(instruction.id)}
+                >
+                  X
+                </Button>
               </li>
             ))}
           </ol>
-
           <br />
           <Button
             variant="primary"
