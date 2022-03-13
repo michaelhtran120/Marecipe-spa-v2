@@ -21,6 +21,17 @@
     color: clr(neutral, light);
   }
 }
+
+.primary[disabled] {
+  background-color: clr(neutral, base);
+
+  &:hover {
+    color: clr(neutral, dark);
+    cursor: initial;
+    box-shadow: none;
+    transform: none;
+  }
+}
 .primary_outline {
   background-color: transparent;
   color: clr(primary);

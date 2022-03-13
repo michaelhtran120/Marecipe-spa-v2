@@ -3,6 +3,7 @@
 // React and library imports
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Button from "../../Buttons/Button";
 
 // Component Import
 import LabelInput from "../../LabelInput/LabelInput";
@@ -145,82 +146,24 @@ function RecipeForm(): JSX.Element {
         </div>
       </div>
       <div className={styles.bottom_container}>
-        <div key={ingredientList[0].id} className={styles.ingredient}>
-          <div className={styles.input_1}>
-            <LabelInput
-              label="Ingredient Name"
-              inputId="name"
-              type="text"
-              dataId={ingredientList[0].id}
+        <div className={styles.ingredients_container}>
+          {ingredientList.map((i) => (
+            <IngredientInput
+              key={i.id}
+              dataId={i.id}
+              data={i}
               handleChange={handleChange}
-              value={ingredientList[0].name}
-              autocomplete="false"
             />
-          </div>
-          <div className={styles.input_2}>
-            <LabelInput
-              label="Qty in grams"
-              inputId="weight"
-              type="number"
-              dataId={ingredientList[0].id}
-              handleChange={handleChange}
-              value={ingredientList[0].weight}
-              autocomplete="false"
-            />
-          </div>
-          <div className={styles.input_3}>
-            <LabelInput
-              label="Carbs"
-              inputId="carbs"
-              type="number"
-              dataId={ingredientList[0].id}
-              handleChange={handleChange}
-              value={ingredientList[0].carbs}
-              autocomplete="false"
-            />
-          </div>
-          <div className={styles.input_4}>
-            <LabelInput
-              label="Proteins"
-              inputId="proteins"
-              type="number"
-              dataId={ingredientList[0].id}
-              handleChange={handleChange}
-              value={ingredientList[0].proteins}
-              autocomplete="false"
-            />
-          </div>
-          <div className={styles.input_5}>
-            <LabelInput
-              label="Fats"
-              inputId="fats"
-              type="number"
-              dataId={ingredientList[0].id}
-              handleChange={handleChange}
-              value={ingredientList[0].fats}
-              autocomplete="false"
-            />
-          </div>
+          ))}
+          <Button
+            variant="primary"
+            handleClick={addIngredient}
+            disabled={addIngredientBtnState}
+          >
+            Add Ingredient
+          </Button>
         </div>
-        {ingredientList.length > 1
-          ? ingredientList
-              .slice(1)
-              .map((i) => (
-                <IngredientInput
-                  key={i.id}
-                  dataId={i.id}
-                  data={i}
-                  handleChange={handleChange}
-                />
-              ))
-          : null}
-        <button
-          type="button"
-          onClick={addIngredient}
-          disabled={addIngredientBtnState}
-        >
-          Add
-        </button>
+        <div className={styles.instructions_container}>Instructions</div>
       </div>
     </form>
   );

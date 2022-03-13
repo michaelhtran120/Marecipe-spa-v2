@@ -6,6 +6,7 @@ type ButtonProps = {
   children: React.ReactNode;
   variant: string;
   handleClick: (event?: any) => void;
+  disabled?: boolean;
   submit?: boolean;
 };
 
@@ -13,6 +14,7 @@ function Button({
   children,
   variant,
   handleClick,
+  disabled,
   submit,
 }: ButtonProps): JSX.Element {
   const variantStyle = () => {
@@ -39,6 +41,7 @@ function Button({
       type={submit ? "submit" : "button"}
       className={`${styles.button} ${variantStyle()}`}
       onClick={handleClick}
+      disabled={disabled}
     >
       {children}
     </button>
@@ -46,6 +49,7 @@ function Button({
 }
 
 Button.defaultProps = {
+  disabled: false,
   submit: false,
 };
 
