@@ -21,8 +21,15 @@ type Ingredients = {
   fats: string;
 };
 
+type Instruction = {
+  id: string;
+  instruction: string;
+};
+
 function RecipeForm(): JSX.Element {
   const [addIngredientBtnState, setAddIngredientBtnState] = useState(false);
+
+  const [addInstructionsBtnState, setAddInstructionBtnState] = useState(false);
 
   const [inputs, setInputs] = useState({
     title: "",
@@ -38,6 +45,13 @@ function RecipeForm(): JSX.Element {
       carbs: "",
       proteins: "",
       fats: "",
+    },
+  ]);
+
+  const [instructionList, setInstructionList] = useState<Instruction[]>([
+    {
+      id: uuidv4(),
+      instruction: "",
     },
   ]);
 
@@ -59,6 +73,17 @@ function RecipeForm(): JSX.Element {
     setAddIngredientBtnState(checkForEmpty());
   }, [ingredientList]);
 
+  useEffect(() => {
+    const checkForEmpty = () => {
+      for (let i = 0; i < instructionList.length; i += 1) {
+        if (instructionList[i].instruction === "") return true;
+      }
+      return false;
+    };
+
+    setAddInstructionBtnState(checkForEmpty());
+  });
+
   const addIngredient = () => {
     setIngredientList([
       ...ingredientList,
@@ -73,11 +98,22 @@ function RecipeForm(): JSX.Element {
     ]);
   };
 
+  const addInstruction = () => {
+    setInstructionList([
+      ...instructionList,
+      {
+        id: uuidv4(),
+        instruction: "",
+      },
+    ]);
+  };
+
   useEffect(() => {
-    console.log(ingredientList, inputs);
-  }, [ingredientList, inputs]);
+    console.log(ingredientList, inputs, instructionList);
+  }, [ingredientList, inputs, instructionList]);
 
   let updatedIngredientList: Ingredients[];
+  let updatedInstructionList: Instruction[];
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -106,6 +142,18 @@ function RecipeForm(): JSX.Element {
           return aIngredient;
         });
         setIngredientList(updatedIngredientList);
+        break;
+      case "instruction":
+        updatedInstructionList = instructionList.map((aInstruction) => {
+          if (aInstruction.id === dataset.id) {
+            return {
+              ...aInstruction,
+              instruction: value,
+            };
+          }
+          return aInstruction;
+        });
+        setInstructionList(updatedInstructionList);
         break;
       default:
     }
@@ -145,8 +193,17 @@ function RecipeForm(): JSX.Element {
           ) : null}
         </div>
       </div>
+      <hr />
       <div className={styles.bottom_container}>
         <div className={styles.ingredients_container}>
+          <h3>Ingredients</h3>
+          <div className={styles.ingredients_labels}>
+            <p className={styles.label_1}>Name</p>
+            <p className={styles.label_2}>Quantity</p>
+            <p className={styles.label_3}>Carbs</p>
+            <p className={styles.label_4}>Proteins</p>
+            <p className={styles.label_5}>Fats</p>
+          </div>
           {ingredientList.map((i) => (
             <IngredientInput
               key={i.id}
@@ -163,7 +220,26 @@ function RecipeForm(): JSX.Element {
             Add Ingredient
           </Button>
         </div>
-        <div className={styles.instructions_container}>Instructions</div>
+        <div className={styles.instructions_container}>
+          <h3>Instructions</h3>
+          {instructionList.map((instruction) => (
+            <input
+              key={instruction.id}
+              value={instruction.instruction}
+              name="instruction"
+              data-id={instruction.id}
+              onChange={handleChange}
+            />
+          ))}
+          <br />
+          <Button
+            variant="primary"
+            handleClick={addInstruction}
+            disabled={addInstructionsBtnState}
+          >
+            Add Ingredient
+          </Button>
+        </div>
       </div>
     </form>
   );
