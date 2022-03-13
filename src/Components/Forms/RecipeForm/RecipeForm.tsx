@@ -12,6 +12,12 @@ import IngredientInput from "./IngredientInputs/IngredientInput";
 // Style import
 import styles from "./RecipeForm.module.scss";
 
+type Inputs = {
+  title: string;
+  imageUrl: string;
+  description: string;
+};
+
 type Ingredients = {
   id: string;
   name: string;
@@ -31,7 +37,7 @@ function RecipeForm(): JSX.Element {
 
   const [addInstructionsBtnState, setAddInstructionBtnState] = useState(false);
 
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState<Inputs>({
     title: "",
     imageUrl: "",
     description: "",
@@ -55,6 +61,7 @@ function RecipeForm(): JSX.Element {
     },
   ]);
 
+  // Logic to disable add ingredient/instruction buttons.
   useEffect(() => {
     const checkForEmpty = () => {
       for (let i = 0; i < ingredientList.length; i += 1) {
@@ -82,8 +89,9 @@ function RecipeForm(): JSX.Element {
     };
 
     setAddInstructionBtnState(checkForEmpty());
-  });
+  }, [instructionList]);
 
+  // Method to handle adding an ingredient and instructions.
   const addIngredient = () => {
     setIngredientList([
       ...ingredientList,
@@ -114,7 +122,9 @@ function RecipeForm(): JSX.Element {
 
   let updatedIngredientList: Ingredients[];
   let updatedInstructionList: Instruction[];
-  const handleChange = (
+
+  // Method that updates all input states
+  const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value, dataset } = event.target;
@@ -167,7 +177,7 @@ function RecipeForm(): JSX.Element {
             label="Recipe Title"
             inputId="title"
             type="text"
-            handleChange={handleChange}
+            handleChange={handleInputChange}
             value={inputs.title}
             autocomplete="false"
           />
@@ -175,7 +185,7 @@ function RecipeForm(): JSX.Element {
             label="Image URL"
             inputId="imageUrl"
             type="text"
-            handleChange={handleChange}
+            handleChange={handleInputChange}
             value={inputs.imageUrl}
             autocomplete="false"
           />
@@ -183,7 +193,7 @@ function RecipeForm(): JSX.Element {
             label="Description"
             inputId="description"
             type="textarea"
-            handleChange={handleChange}
+            handleChange={handleInputChange}
             value={inputs.description}
           />
         </div>
@@ -209,7 +219,7 @@ function RecipeForm(): JSX.Element {
               key={i.id}
               dataId={i.id}
               data={i}
-              handleChange={handleChange}
+              handleChange={handleInputChange}
             />
           ))}
           <Button
@@ -220,17 +230,24 @@ function RecipeForm(): JSX.Element {
             Add Ingredient
           </Button>
         </div>
+        <hr />
         <div className={styles.instructions_container}>
           <h3>Instructions</h3>
-          {instructionList.map((instruction) => (
-            <input
-              key={instruction.id}
-              value={instruction.instruction}
-              name="instruction"
-              data-id={instruction.id}
-              onChange={handleChange}
-            />
-          ))}
+          <ol className={styles.instruction_list}>
+            {instructionList.map((instruction) => (
+              <li>
+                <input
+                  key={instruction.id}
+                  value={instruction.instruction}
+                  name="instruction"
+                  data-id={instruction.id}
+                  onChange={handleInputChange}
+                  className={styles.instruction_input}
+                />
+              </li>
+            ))}
+          </ol>
+
           <br />
           <Button
             variant="primary"
