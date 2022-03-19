@@ -52,34 +52,6 @@
         font-size: fs(h3);
         padding: 10px 0px;
       }
-      .ingredients_labels {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-areas: "label_1 label_1 label_2 label_3 label_4 label_5";
-
-        .label_1,
-        .label_2,
-        .label_3,
-        .label_4,
-        .label_5 {
-          padding: 0px 0px 5px 5px;
-        }
-        .label_1 {
-          grid-area: label_1;
-        }
-        .label_2 {
-          grid-area: label_2;
-        }
-        .label_3 {
-          grid-area: label_3;
-        }
-        .label_4 {
-          grid-area: label_4;
-        }
-        .label_5 {
-          grid-area: label_5;
-        }
-      }
 
       .ingredient_list_item {
         display: flex;

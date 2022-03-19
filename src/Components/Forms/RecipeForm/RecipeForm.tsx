@@ -221,13 +221,6 @@ function RecipeForm(): JSX.Element {
       <div className={styles.bottom_container}>
         <div className={styles.ingredients_container}>
           <h3>Ingredients</h3>
-          <div className={styles.ingredients_labels}>
-            <p className={styles.label_1}>Name</p>
-            <p className={styles.label_2}>Quantity</p>
-            <p className={styles.label_3}>Carbs</p>
-            <p className={styles.label_4}>Proteins</p>
-            <p className={styles.label_5}>Fats</p>
-          </div>
           {ingredientList.map((i) => (
             <div className={styles.ingredient_list_item}>
               <IngredientInput
